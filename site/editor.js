@@ -281,7 +281,7 @@ function refit() {
 const pad = (label) => label.padEnd(9);
 const num = (value) => fmt(value ?? 0).padStart(6);
 const fact = (label, value, extra = []) => ({ segments: [[pad(label), "t-key"], [num(value), "md-num"], ...extra] });
-const month = (iso) => iso.slice(0, 7);
+const month = (iso) => (iso ? iso.slice(0, 7) : "—");
 
 function starShare(stars) {
   const total = snapshot.stars?.total || 0;
@@ -310,7 +310,7 @@ function projectSpec(project) {
     ...Object.entries(project.counts || {}).map(([name, value]) => fact(name, value)),
     fact("files", project.files),
     { segments: [[pad("lang"), "t-key"], [project.language || "—", "md-code"], ...(project.license ? [["  " + project.license, "t-dim"]] : [])] },
-    { segments: [[pad("since"), "t-key"], project.created || "—", ["  pushed ", "t-dim"], project.pushed] },
+    { segments: [[pad("since"), "t-key"], project.created || "—", ["  pushed ", "t-dim"], project.pushed || "—"] },
   ];
   const url = project.url;
   return {
@@ -504,10 +504,12 @@ function moreSpec() {
   const list = childrenOf("more").map((entry) => entry.data);
   const stars = list.reduce((sum, project) => sum + (project.stars || 0), 0);
   const { share, note } = starShare(stars);
+  const dates = list.map((project) => project.created).filter(Boolean).sort();
+  const pushed = list.map((project) => project.pushed).filter(Boolean).sort();
   const out = [
     fact("stars", stars, ["  ", ...gauge(share / 100, 17 + note.length), ...(note ? [[note, "t-dim"]] : [])]),
     fact("forks", list.reduce((sum, project) => sum + (project.forks || 0), 0)),
-    { segments: [[pad("since"), "t-key"], month(list.map((project) => project.created).sort()[0]), ["  pushed ", "t-dim"], month(list.map((project) => project.pushed).sort().at(-1))] },
+    { segments: [[pad("since"), "t-key"], month(dates[0]), ["  pushed ", "t-dim"], month(pushed.at(-1))] },
   ];
   return {
     cwd: "~/P",
