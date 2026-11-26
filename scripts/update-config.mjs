@@ -1,0 +1,415 @@
+import fs from "fs";
+
+const config = {
+  "identity": {
+    "name": "Aman Sachan",
+    "barTitle": "AMAN SACHAN",
+    "terminalUser": "amsach",
+    "domain": "amsach.github.io",
+    "tagline": "edge ai, compression, systems & strategy.",
+    "github": "AmSach",
+    "storagePrefix": "amsach"
+  },
+  "about": {
+    "bio": "Independent systems researcher and BBA (Business Analytics) scholar at IIFT Kakinada building sub-2-BPW MoE pruning (MAPLE), real-time ROS2 robotics, C++20 engines, and causal econometric decision systems. Upstream contributor to tensorflow/tensorflow and microsoft/vscode.",
+    "extra": "IIFT Kakinada · Open Source · India"
+  },
+  "links": [
+    { "label": "Email", "url": "mailto:amansachan92905@gmail.com" },
+    { "label": "GitHub", "url": "https://github.com/AmSach" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/theamansachan" },
+    { "label": "Instagram", "url": "https://www.instagram.com/i.amsach" },
+    { "label": "HuggingFace", "url": "https://huggingface.co/AmSach" },
+    { "label": "Scholar", "url": "https://scholar.google.com/citations?user=dfgiWLYAAAAJ&hl=en" },
+    { "label": "Kaggle", "url": "https://kaggle.com/amansachan" },
+    { "label": "Zenodo", "url": "https://doi.org/10.5281/zenodo.24042480" }
+  ],
+  "work": [
+    {
+      "when": "2026 - present",
+      "title": "Junior Consultant, Strategy & Operations",
+      "org": "180 Degrees Consulting (IIFT Kakinada)",
+      "where": "Kakinada · Consulting",
+      "desc": "Conducting structured consulting engagements on operational diagnostics, market feasibility, and unit economics; writing custom Python scripts to scrape market data and accelerate client research.",
+      "url": "https://www.linkedin.com/in/theamansachan"
+    },
+    {
+      "when": "2025 - 2026",
+      "title": "Operations & Product Intern",
+      "org": "ExcelAit Pvt. Ltd.",
+      "where": "Remote",
+      "desc": "Built Python prototypes to automatically scale question difficulty and process content, reducing manual task time by 40%, while maintaining partner outreach and milestone trackers."
+    },
+    {
+      "when": "2024 - 2025",
+      "title": "Workflow & Operations Lead",
+      "org": "Premiere WorX",
+      "where": "Remote",
+      "desc": "Managed project turnaround schedules and delivery checks across 14 international video editing deliverables with a team of 4."
+    },
+    {
+      "when": "2023 - present",
+      "title": "Team Leader & Hardware Head",
+      "org": "Independent Robotics Team",
+      "where": "20+ Hackathons",
+      "desc": "Led hardware builds (6x6 ground rover, document scanner) and parts inventory under fixed deadlines. IIT Bombay Techfest Runner-up, IIT Kanpur Techkriti 2nd Runner-up, ISRO Antariksh Top-50."
+    },
+    {
+      "when": "2026 - present",
+      "title": "Junior Travel & Logistics Coordinator",
+      "org": "IIFT Kakinada",
+      "where": "Batch Administration",
+      "desc": "Managing travel schedules, vendor bus bookings, and seat allocation for 60+ students across institutional visits."
+    },
+    {
+      "when": "2023 - 2026",
+      "title": "Head Boy | House Captain | Prefect",
+      "org": "Dr. Virendra Swarup Education Center",
+      "where": "Kanpur",
+      "desc": "Managed prefect council and student-faculty communication as Head Boy (2025-26); led 150+ students across sports and academics as House Captain (2024-25)."
+    }
+  ],
+  "projects": [
+    {
+      "name": "MAPLE",
+      "tag": "LLM Compression · Python",
+      "desc": "Manifold-Activated Pruning of Latent Experts for Sub-2-BPW MoE LLMs. Compresses Gemma 4 26B from 9.92 GB to 4.75 GB (1.48 BPW) at 45.4 tok/s on 6GB GPUs.",
+      "long": "MAPLE structurally prunes inactive latent experts on consumer hardware without sacrificing reasoning fidelity. Reached 65+ GitHub stars, 300+ HuggingFace downloads in 24h, and featured on Hacker News and llama.cpp discussions.",
+      "githubRepo": "AmSach/maple",
+      "shots": ["shots/maple.svg"],
+      "stack": ["Python", "PyTorch", "GGUF", "MoE", "CUDA"],
+      "url": "https://github.com/AmSach/maple"
+    },
+    {
+      "name": "VoxelNav",
+      "tag": "Robotics · C++ / ROS2",
+      "desc": "Real-time semantic voxel mapping system for ROS2 robots with sub-100ms latency on Jetson Nano.",
+      "long": "VoxelNav fuses depth/LiDAR point clouds with semantic segmentation into a sparse Bayesian 3D voxel grid, enabling obstacle-aware autonomous navigation on edge robotics hardware.",
+      "githubRepo": "AmSach/voxelnav",
+      "shots": ["shots/voxelnav.svg"],
+      "stack": ["C++", "ROS2", "Jetson Nano", "3D Mapping"],
+      "url": "https://github.com/AmSach/voxelnav"
+    },
+    {
+      "name": "Decision Analytics Engine",
+      "tag": "Econometrics · Python",
+      "desc": "Enterprise causal econometrics and ML decision architecture deploying Double/Debiased ML, Level-k/QRE pricing, and spectral hypergraph attribution.",
+      "long": "Production B-school analytics engine benchmarking cohort retention, BG/NBD + Gamma-Gamma CLV modeling, survival analysis, and causal price elasticity across 50,000+ transactions.",
+      "githubRepo": "AmSach/decision-analytics-engine",
+      "shots": ["shots/decision-engine.svg"],
+      "stack": ["Python", "Double ML", "PostgreSQL", "DuckDB"],
+      "url": "https://github.com/AmSach/decision-analytics-engine"
+    },
+    {
+      "name": "Latency Engine",
+      "tag": "Quant Systems · C++20",
+      "desc": "Sub-millisecond C++20 and async Python HFT statistical arbitrage, cross-exchange spread, and delta-neutral funding engine.",
+      "long": "Monitors live order book feeds across venues with lock-free structures in C++20 and async Python orchestration for spread and funding-rate arbitrage.",
+      "githubRepo": "AmSach/latency-engine",
+      "shots": ["shots/latency-engine.svg"],
+      "stack": ["C++20", "Async Python", "Order Book", "Lock-Free"],
+      "url": "https://github.com/AmSach/latency-engine"
+    },
+    {
+      "name": "GhostPilot",
+      "tag": "Autonomy · Python / ROS2",
+      "desc": "GPS-denied drone navigation with Agentic AI combining VINS-Mono, Nav2, and an LLM mission parser.",
+      "long": "Translates natural-language mission objectives into collision-free visual-inertial waypoints for autonomous UAV flight without GPS.",
+      "githubRepo": "AmSach/GhostPilot",
+      "shots": ["shots/ghostpilot.svg"],
+      "stack": ["Python", "VINS-Mono", "Nav2", "ROS2"],
+      "url": "https://github.com/AmSach/GhostPilot"
+    },
+    {
+      "name": "KVQuant",
+      "tag": "Inference · Python",
+      "desc": "Drop-in KV cache compressor for local LLM inference, enabling 70B-class context scaling on 8GB RAM.",
+      "long": "Compresses key-value attention caches on the fly during autoregressive decoding to fit large models on memory-constrained laptops.",
+      "githubRepo": "AmSach/kvquant",
+      "shots": ["shots/kvquant.svg"],
+      "stack": ["Python", "Quantization", "LLM Inference"],
+      "url": "https://github.com/AmSach/kvquant"
+    },
+    {
+      "name": "Middleout Lattice",
+      "tag": "Compression · C++",
+      "desc": "Multi-Scale Context-Predictive Range Coder (MS-CPRC) lossless compression engine beating Zstd L22 and Brotli L11.",
+      "long": "High-performance C++ entropy coder combining multi-scale context modeling with predictive range coding.",
+      "githubRepo": "AmSach/middleout-lattice",
+      "more": true,
+      "shots": ["shots/middleout.svg"],
+      "stack": ["C++", "Compression", "Range Coding"],
+      "url": "https://github.com/AmSach/middleout-lattice"
+    },
+    {
+      "name": "StegaChirp",
+      "tag": "DSP · Pure Python",
+      "desc": "Ultrasonic FSK steganography for WAV files in pure Python with zero numpy or scipy dependencies.",
+      "long": "Encodes and decodes hidden payloads in ultrasonic frequency-shift keyed audio carriers.",
+      "githubRepo": "AmSach/stegachirp",
+      "more": true,
+      "shots": ["shots/stegachirp.svg"],
+      "stack": ["Python", "DSP", "Audio", "Steganography"],
+      "url": "https://github.com/AmSach/stegachirp"
+    },
+    {
+      "name": "Unlimited OCR",
+      "tag": "Desktop · Electron / Python",
+      "desc": "Zero-Cloud, 100% local offline desktop OCR application with Electron UI and ONNX high-precision engine.",
+      "long": "Air-gapped document intelligence processing high-volume filings and tables with zero outbound network calls.",
+      "githubRepo": "AmSach/unlimited-ocr",
+      "more": true,
+      "shots": ["shots/unlimited-ocr.svg"],
+      "stack": ["Electron", "Python", "ONNX", "Local AI"],
+      "url": "https://github.com/AmSach/unlimited-ocr"
+    },
+    {
+      "name": "Attempt 3D Engine",
+      "tag": "Game Engine · Pure C++",
+      "desc": "From-scratch 3D game engine and zombie survival FPS in pure C++ (398KB executable, zero external frameworks).",
+      "long": "Pure software rasterizer with custom 3D math library, perspective-correct texturing, and Z-buffering.",
+      "githubRepo": "AmSach/attempt-3d-engine",
+      "more": true,
+      "shots": ["shots/attempt-3d.svg"],
+      "stack": ["C++", "Graphics", "Software Rasterizer"],
+      "url": "https://github.com/AmSach/attempt-3d-engine"
+    },
+    {
+      "name": "KernelWeave",
+      "tag": "Agents · Python",
+      "desc": "Self-compiling skill kernels for LLMs.",
+      "long": "Synthesizes and caches reusable execution kernels from agent trajectories.",
+      "githubRepo": "AmSach/kernelweave",
+      "more": true,
+      "shots": ["shots/project-1.svg"],
+      "stack": ["Python", "LLM Agents", "Compilers"],
+      "url": "https://github.com/AmSach/kernelweave"
+    },
+    {
+      "name": "SignalHop",
+      "tag": "Systems · Python",
+      "desc": "Low-latency signal routing and telemetry pipeline.",
+      "long": "Lightweight routing utility for distributed telemetry streams.",
+      "githubRepo": "AmSach/SignalHop",
+      "more": true,
+      "shots": ["shots/project-2.svg"],
+      "stack": ["Python", "Telemetry", "Networking"],
+      "url": "https://github.com/AmSach/SignalHop"
+    },
+    {
+      "name": "Nexus",
+      "tag": "OSINT · Python",
+      "desc": "Automated open-source intelligence and knowledge correlation engine.",
+      "long": "Gathers, correlates, and analyzes public signals across decentralized platforms.",
+      "githubRepo": "AmSach/nexus",
+      "more": true,
+      "shots": ["shots/project-1.svg"],
+      "stack": ["Python", "OSINT", "Graph Analysis"],
+      "url": "https://github.com/AmSach/nexus"
+    },
+    {
+      "name": "Lingua",
+      "tag": "Agents · Python",
+      "desc": "High-speed document translation agent preserving 600-page layout and formatting fidelity.",
+      "long": "Autonomous translation agent reconstructing exact PDF document geometry and typography.",
+      "githubRepo": "AmSach/Lingua",
+      "more": true,
+      "shots": ["shots/project-2.svg"],
+      "stack": ["Python", "Agents", "PDF", "NLP"],
+      "url": "https://github.com/AmSach/Lingua"
+    },
+    {
+      "name": "Munchkin AI",
+      "tag": "Cognitive AI · Python",
+      "desc": "Autonomous desktop AI companion with a metacognitive psyche and continuous episodic memory.",
+      "long": "Implements continuous perception, episodic memory consolidation, and autonomous goal generation.",
+      "githubRepo": "AmSach/munchkin-ai",
+      "more": true,
+      "shots": ["shots/project-1.svg"],
+      "stack": ["Python", "Cognitive AI", "Local LLM"],
+      "url": "https://github.com/AmSach/munchkin-ai"
+    },
+    {
+      "name": "Diplomatic Embeddings",
+      "tag": "NLP · Python",
+      "desc": "Geopolitical knowledge graph and diplomatic intelligence engine for UN treaties and policy stance mining.",
+      "long": "Vector-based stance mining and resolution synthesizer analyzing multi-nation treaty alignments.",
+      "githubRepo": "AmSach/diplomatic-embeddings",
+      "more": true,
+      "shots": ["shots/project-2.svg"],
+      "stack": ["Python", "Knowledge Graph", "NLP"],
+      "url": "https://github.com/AmSach/diplomatic-embeddings"
+    },
+    {
+      "name": "SwarmDraft",
+      "tag": "Robotics · Python",
+      "desc": "Deterministic battery-aware task auctions for multi-agent robot swarms.",
+      "long": "Decentralized task allocation framework optimizing swarm endurance and mission throughput.",
+      "githubRepo": "AmSach/swarmdraft",
+      "more": true,
+      "shots": ["shots/project-1.svg"],
+      "stack": ["Python", "Swarm Robotics", "Auctions"],
+      "url": "https://github.com/AmSach/swarmdraft"
+    },
+    {
+      "name": "Tracelet",
+      "tag": "Distributed Systems · Python",
+      "desc": "Zero-dependency NDJSON distributed-trace critical-path summarizer.",
+      "long": "Parses large-scale distributed execution traces to extract latency bottlenecks on the critical path.",
+      "githubRepo": "AmSach/tracelet",
+      "more": true,
+      "shots": ["shots/project-2.svg"],
+      "stack": ["Python", "Tracing", "Distributed Systems"],
+      "url": "https://github.com/AmSach/tracelet"
+    },
+    {
+      "name": "LoraMesh",
+      "tag": "Networking · Python",
+      "desc": "Zero-dependency LoRa mesh simulator modeling link budget, airtime, and flood routing.",
+      "long": "Simulates packet collisions, duty cycles, and mesh propagation in pure stdlib Python.",
+      "githubRepo": "AmSach/loramesh",
+      "more": true,
+      "shots": ["shots/project-1.svg"],
+      "stack": ["Python", "LoRa", "Mesh Networks"],
+      "url": "https://github.com/AmSach/loramesh"
+    },
+    {
+      "name": "BlinkSpan",
+      "tag": "Networking · Python",
+      "desc": "Deterministic packet-level network link simulator for testing real-time protocols.",
+      "long": "Injects deterministic jitter, packet reordering, and loss curves into protocol benchmarks.",
+      "githubRepo": "AmSach/blinkspan",
+      "more": true,
+      "shots": ["shots/project-2.svg"],
+      "stack": ["Python", "Networking", "Simulation"],
+      "url": "https://github.com/AmSach/blinkspan"
+    },
+    {
+      "name": "EchoPrint",
+      "tag": "Security · Python",
+      "desc": "Zero-dependency 500-line TCP/IP stack fingerprinter in pure stdlib Python.",
+      "long": "Analyzes TCP window sizes, TTL signatures, and SYN-ACK options without nmap dependencies.",
+      "githubRepo": "AmSach/echoprint",
+      "more": true,
+      "shots": ["shots/project-1.svg"],
+      "stack": ["Python", "Cybersecurity", "TCP/IP"],
+      "url": "https://github.com/AmSach/echoprint"
+    },
+    {
+      "name": "Prompt Shield",
+      "tag": "AI Security · Python",
+      "desc": "Zero-dependency prompt-injection scanner in 200 lines with sub-millisecond evaluation.",
+      "long": "Fast heuristic and semantic scanner identifying jailbreak patterns and payload smuggling.",
+      "githubRepo": "AmSach/prompt-shield",
+      "more": true,
+      "shots": ["shots/project-2.svg"],
+      "stack": ["Python", "AI Security", "LLM Guardrails"],
+      "url": "https://github.com/AmSach/prompt-shield"
+    },
+    {
+      "name": "WhisperVault",
+      "tag": "Local AI · WebGPU",
+      "desc": "100% local in-browser second brain combining WebGPU LLM with client-side RAG.",
+      "long": "Zero servers, zero accounts: executes vector embeddings and LLM reasoning entirely inside the browser.",
+      "githubRepo": "AmSach/whispervault",
+      "more": true,
+      "shots": ["shots/project-1.svg"],
+      "stack": ["WebGPU", "JavaScript", "Local RAG"],
+      "url": "https://github.com/AmSach/whispervault"
+    },
+    {
+      "name": "PyBox",
+      "tag": "Security · Python / C",
+      "desc": "Lightweight Python sandbox using rlimits and seccomp filters for untrusted code execution.",
+      "long": "Enforces strict CPU, memory, and filesystem caps without the overhead of Docker containers.",
+      "githubRepo": "AmSach/pybox",
+      "more": true,
+      "shots": ["shots/project-2.svg"],
+      "stack": ["Python", "Seccomp", "Sandboxing"],
+      "url": "https://github.com/AmSach/pybox"
+    },
+    {
+      "name": "BTC Research",
+      "tag": "Quantitative · Python",
+      "desc": "Multi-agent BTC/USD research pipeline integrating technical, on-chain, and macro signals.",
+      "long": "Autonomous multi-agent system synthesizing market microstructure and order flow data.",
+      "githubRepo": "AmSach/btc-research",
+      "more": true,
+      "shots": ["shots/latency-engine.svg"],
+      "stack": ["Python", "Quant", "Multi-Agent"],
+      "url": "https://github.com/AmSach/btc-research"
+    },
+    {
+      "name": "Excel Node Engine",
+      "tag": "Analytics Desktop · TypeScript",
+      "desc": "Virtualized spreadsheet and decision analytics desktop engine with interactive DAG execution pipeline.",
+      "long": "Production enterprise decision engine featuring 10 prebuilt models and details.so web craftsmanship.",
+      "githubRepo": "AmSach/excel-node-engine",
+      "more": true,
+      "shots": ["shots/decision-engine.svg"],
+      "stack": ["TypeScript", "DAG Engine", "Analytics"],
+      "url": "https://github.com/AmSach/excel-node-engine"
+    }
+  ],
+  "talks": [
+    {
+      "name": "IIM Bangalore Founder's Dilemma & Crown Jewel",
+      "place": "Bengaluru, India",
+      "when": "2026",
+      "lat": 12.97,
+      "lon": 77.59,
+      "desc": "National Finalist across venture unit economics (CAC, LTV, Payback) and corporate balance sheet stress-testing.",
+      "url": "https://www.linkedin.com/in/theamansachan",
+      "photo": "shots/talk-iimb.svg",
+      "photos": []
+    },
+    {
+      "name": "IIM Indore Enigma & Epinoia",
+      "place": "Indore, India",
+      "when": "2026",
+      "lat": 22.72,
+      "lon": 75.86,
+      "desc": "National Finalist in business strategy (Enigma) and applied tech hackathon (Epinoia).",
+      "url": "https://www.linkedin.com/in/theamansachan",
+      "photo": "shots/talk-iimi.svg",
+      "photos": []
+    },
+    {
+      "name": "IIT Bombay Techfest",
+      "place": "Mumbai, India",
+      "when": "2025",
+      "lat": 19.07,
+      "lon": 72.88,
+      "desc": "Runner-up in autonomous robotics hardware build and real-time navigation.",
+      "url": "https://github.com/AmSach/voxelnav",
+      "photo": "shots/talk-iitb.svg",
+      "photos": []
+    },
+    {
+      "name": "IIT Kanpur Techkriti & IIT Delhi Stratagize",
+      "place": "Kanpur / New Delhi, India",
+      "when": "2025 - 2026",
+      "lat": 28.61,
+      "lon": 77.21,
+      "desc": "2nd Runner-up at IIT Kanpur Techkriti; National Finalist at IIT Delhi Stratagize supply chain case.",
+      "url": "https://www.linkedin.com/in/theamansachan",
+      "photo": "shots/talk-iitk.svg",
+      "photos": []
+    }
+  ],
+  "wallRepos": [
+    "AmSach/maple",
+    "AmSach/voxelnav",
+    "AmSach/decision-analytics-engine",
+    "AmSach/latency-engine",
+    "AmSach/middleout-lattice",
+    "AmSach/GhostPilot"
+  ],
+  "siteStack": [
+    { "name": "Vanilla JS", "via": "zero-build frontend" },
+    { "name": "Canvas 2D", "via": "intro + contribution ink" }
+  ]
+};
+
+fs.writeFileSync("E:/amsach-portfolio/portfolio.config.json", JSON.stringify(config, null, 2));
+console.log("Updated portfolio.config.json with 26 projects and dark terminal SVGs!");

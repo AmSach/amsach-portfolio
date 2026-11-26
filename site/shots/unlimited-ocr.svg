@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs>
+    <linearGradient id="termGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1117"/>
+      <stop offset="100%" stop-color="#080a0f"/>
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="emeraldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Shell -->
+  <rect width="800" height="460" rx="10" fill="url(#termGrad)"/>
+  <rect x="1" y="1" width="798" height="458" rx="9" fill="none" stroke="#1e2638" stroke-width="2"/>
+
+  <!-- Window Header Bar -->
+  <rect width="800" height="38" rx="10" fill="#131826"/>
+  <rect x="0" y="37" width="800" height="1" fill="#1e2638"/>
+  <circle cx="24" cy="19" r="5" fill="#ff5f56"/>
+  <circle cx="42" cy="19" r="5" fill="#ffbd2e"/>
+  <circle cx="60" cy="19" r="5" fill="#27c93f"/>
+  <text x="400" y="23" text-anchor="middle" fill="#7a889b" font-family="monospace" font-size="12" letter-spacing="0.5">unlimited-ocr — zero-cloud local document engine</text>
+
+  <!-- Command Prompt Strip -->
+  <rect x="28" y="50" width="744" height="32" rx="5" fill="#0b0e14" stroke="#192231"/>
+  <text x="40" y="71" fill="#4ade80" font-family="monospace" font-size="12" font-weight="bold">$ <tspan fill="#e2e8f0" font-weight="normal">unlimited-ocr process filing_10k.pdf --engine onnx-local --tables --threads 8</tspan></text>
+
+  <!-- Left Sidebar Pane -->
+  <rect x="28" y="92" width="224" height="338" rx="6" fill="#0a0d13" stroke="#192231"/>
+  <rect x="28" y="92" width="224" height="28" rx="6" fill="#111622"/>
+  <text x="40" y="110" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="1">OFFLINE OCR PIPELINE</text>
+    <text x="44" y="120" fill="#4ade80" font-family="monospace" font-size="12">Throughput: <tspan fill="#f1f5f9">48 Pages / sec</tspan></text>
+    <text x="44" y="146" fill="#4ade80" font-family="monospace" font-size="12">Character Recall: <tspan fill="#f1f5f9">99.4% Exact Match</tspan></text>
+    <text x="44" y="172" fill="#4ade80" font-family="monospace" font-size="12">Network Activity: <tspan fill="#f1f5f9">0 bytes (100% Offline)</tspan></text>
+    <text x="44" y="198" fill="#38bdf8" font-family="monospace" font-size="12">Layout Analysis: <tspan fill="#f1f5f9">Table Grid + BBox</tspan></text>
+    <text x="44" y="224" fill="#94a3b8" font-family="monospace" font-size="12">Inference Engine: <tspan fill="#f1f5f9">ONNX Runtime C++</tspan></text>
+    <text x="44" y="250" fill="#94a3b8" font-family="monospace" font-size="12">UI Layer: <tspan fill="#f1f5f9">Electron Desktop</tspan></text>
+    <text x="44" y="276" fill="#4ade80" font-family="monospace" font-size="12">Memory Peak: <tspan fill="#f1f5f9">410 MB RSS</tspan></text>
+    <text x="44" y="302" fill="#fbbf24" font-family="monospace" font-size="12">Export Formats: <tspan fill="#f1f5f9">Markdown, JSON, CSV</tspan></text>
+    <text x="44" y="328" fill="#38bdf8" font-family="monospace" font-size="12">Privacy Status: <tspan fill="#f1f5f9">Air-Gapped Sovereign</tspan></text>
+
+  <!-- Right Visual / Graph Pane -->
+  <rect x="264" y="92" width="508" height="338" rx="6" fill="#0a0d13" stroke="#192231"/>
+  <rect x="264" y="92" width="508" height="28" rx="6" fill="#111622"/>
+  <text x="278" y="110" fill="#a78bfa" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="1">DOCUMENT LAYOUT BOUNDING BOX RECONSTRUCTION</text>
+  
+  <!-- Right Content Injected -->
+  <!-- Document Layout Simulation -->
+  <rect x="310" y="140" width="415" height="170" rx="4" fill="#111622" stroke="#1e2638"/>
+  <rect x="330" y="155" width="180" height="16" fill="#38bdf8" opacity="0.3"/>
+  <text x="335" y="167" fill="#38bdf8" font-family="monospace" font-size="9">BBox: Document Title [Conf 0.99]</text>
+  
+  <rect x="330" y="185" width="375" height="40" fill="#4ade80" opacity="0.2"/>
+  <text x="335" y="200" fill="#4ade80" font-family="monospace" font-size="9">BBox: Paragraph Body [Conf 0.98]</text>
+
+  <rect x="330" y="240" width="375" height="50" fill="#a78bfa" opacity="0.25"/>
+  <text x="335" y="255" fill="#a78bfa" font-family="monospace" font-size="9">BBox: Financial Table 4x8 Grid [Conf 0.99]</text>
+
+  <text x="310" y="335" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">Page 1/48 processed in 21ms</text>
+
+  <!-- Status Bar Footer in Right Pane -->
+  <rect x="278" y="380" width="480" height="36" rx="4" fill="#0e131d" stroke="#192231"/>
+  <text x="292" y="398" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">✓ 100% air-gapped document intelligence · Structured JSON/Markdown exported</text>
+  <text x="292" y="411" fill="#64748b" font-family="monospace" font-size="10">Local OCR desktop app · Electron + ONNX high-precision Python engine</text>
+</svg>

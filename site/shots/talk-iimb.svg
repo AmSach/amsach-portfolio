@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs>
+    <linearGradient id="termGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1117"/>
+      <stop offset="100%" stop-color="#080a0f"/>
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="emeraldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Shell -->
+  <rect width="800" height="460" rx="10" fill="url(#termGrad)"/>
+  <rect x="1" y="1" width="798" height="458" rx="9" fill="none" stroke="#1e2638" stroke-width="2"/>
+
+  <!-- Window Header Bar -->
+  <rect width="800" height="38" rx="10" fill="#131826"/>
+  <rect x="0" y="37" width="800" height="1" fill="#1e2638"/>
+  <circle cx="24" cy="19" r="5" fill="#ff5f56"/>
+  <circle cx="42" cy="19" r="5" fill="#ffbd2e"/>
+  <circle cx="60" cy="19" r="5" fill="#27c93f"/>
+  <text x="400" y="23" text-anchor="middle" fill="#7a889b" font-family="monospace" font-size="12" letter-spacing="0.5">iim-bangalore — founder&apos;s dilemma &amp; crown jewel case finals</text>
+
+  <!-- Command Prompt Strip -->
+  <rect x="28" y="50" width="744" height="32" rx="5" fill="#0b0e14" stroke="#192231"/>
+  <text x="40" y="71" fill="#4ade80" font-family="monospace" font-size="12" font-weight="bold">$ <tspan fill="#e2e8f0" font-weight="normal">python -m valuation.stress_test --firm unicorn_deal --model dupont_lbo</tspan></text>
+
+  <!-- Left Sidebar Pane -->
+  <rect x="28" y="92" width="224" height="338" rx="6" fill="#0a0d13" stroke="#192231"/>
+  <rect x="28" y="92" width="224" height="28" rx="6" fill="#111622"/>
+  <text x="40" y="110" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="1">EXECUTIVE BOARDROOM DIAGNOSIS</text>
+    <text x="44" y="120" fill="#38bdf8" font-family="monospace" font-size="12">Competition: <tspan fill="#f1f5f9">IIM Bangalore Finals</tspan></text>
+    <text x="44" y="146" fill="#fbbf24" font-family="monospace" font-size="12">Track: <tspan fill="#f1f5f9">Founder&apos;s Dilemma &amp; Crown</tspan></text>
+    <text x="44" y="172" fill="#4ade80" font-family="monospace" font-size="12">Strategy: <tspan fill="#f1f5f9">Co-Lending + -36d Float</tspan></text>
+    <text x="44" y="198" fill="#4ade80" font-family="monospace" font-size="12">Unit CAC / LTV: <tspan fill="#f1f5f9">₹1,200 / ₹5,800 (4.8x)</tspan></text>
+    <text x="44" y="224" fill="#38bdf8" font-family="monospace" font-size="12">Working Capital: <tspan fill="#f1f5f9">-₹7,370/unit Day 1 Cash</tspan></text>
+    <text x="44" y="250" fill="#94a3b8" font-family="monospace" font-size="12">Hurdle Rate: <tspan fill="#f1f5f9">18.5% ROE</tspan></text>
+    <text x="44" y="276" fill="#4ade80" font-family="monospace" font-size="12">Base Case ROE: <tspan fill="#f1f5f9">24.2% Return</tspan></text>
+    <text x="44" y="302" fill="#4ade80" font-family="monospace" font-size="12">Downside Shock: <tspan fill="#f1f5f9">-35% Demand (Holds)</tspan></text>
+    <text x="44" y="328" fill="#fbbf24" font-family="monospace" font-size="12">Result: <tspan fill="#f1f5f9">National Podium Finalist</tspan></text>
+
+  <!-- Right Visual / Graph Pane -->
+  <rect x="264" y="92" width="508" height="338" rx="6" fill="#0a0d13" stroke="#192231"/>
+  <rect x="264" y="92" width="508" height="28" rx="6" fill="#111622"/>
+  <text x="278" y="110" fill="#a78bfa" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="1">DUPONT 3-TIER ROE DECOMPOSITION WATERFALL</text>
+  
+  <!-- Right Content Injected -->
+  <!-- Financial Waterfall -->
+  <rect x="290" y="140" width="80" height="30" fill="#38bdf8" rx="3"/>
+  <text x="300" y="159" fill="#0b0e14" font-family="monospace" font-size="11" font-weight="bold">Net Margin</text>
+  <text x="300" y="185" fill="#38bdf8" font-family="monospace" font-size="10">14.0% EBITDA</text>
+
+  <text x="380" y="158" fill="#f1f5f9" font-family="monospace" font-size="16">×</text>
+
+  <rect x="400" y="140" width="80" height="30" fill="#4ade80" rx="3"/>
+  <text x="410" y="159" fill="#0b0e14" font-family="monospace" font-size="11" font-weight="bold">Asset Turn</text>
+  <text x="410" y="185" fill="#4ade80" font-family="monospace" font-size="10">1.82x Velocity</text>
+
+  <text x="490" y="158" fill="#f1f5f9" font-family="monospace" font-size="16">×</text>
+
+  <rect x="510" y="140" width="85" height="30" fill="#fbbf24" rx="3"/>
+  <text x="515" y="159" fill="#0b0e14" font-family="monospace" font-size="11" font-weight="bold">Fin Leverage</text>
+  <text x="515" y="185" fill="#fbbf24" font-family="monospace" font-size="10">0.95x Solvency</text>
+
+  <text x="605" y="158" fill="#f1f5f9" font-family="monospace" font-size="16">=</text>
+
+  <rect x="625" y="135" width="115" height="40" fill="#10b981" rx="4"/>
+  <text x="635" y="155" fill="#0b0e14" font-family="monospace" font-size="12" font-weight="bold">ROE: 24.2%</text>
+  <text x="635" y="168" fill="#0b0e14" font-family="monospace" font-size="9">> 18.5% Hurdle</text>
+
+  <rect x="290" y="220" width="450" height="120" rx="4" fill="#111622" stroke="#1e2638"/>
+  <text x="305" y="245" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">Defense Bank Sensitivity: Recommendation Holds</text>
+  <text x="305" y="268" fill="#94a3b8" font-family="monospace" font-size="10">Under severe -35% unit contraction, ROE remains at 19.1%, safely above hurdle.</text>
+  <text x="305" y="288" fill="#94a3b8" font-family="monospace" font-size="10">FLDG capital safety multiple: 21.4x over maximum credit loss.</text>
+
+  <!-- Status Bar Footer in Right Pane -->
+  <rect x="278" y="380" width="480" height="36" rx="4" fill="#0e131d" stroke="#192231"/>
+  <text x="292" y="398" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">✓ Recommendation holds under severe macroeconomic stress · 1st Runner-up</text>
+  <text x="292" y="411" fill="#64748b" font-family="monospace" font-size="10">IIM Bangalore National Finals · Decision-relevant pragmatism · Unassailable financial proofs</text>
+</svg>

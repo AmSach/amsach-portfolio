@@ -99,8 +99,7 @@
       "long": "MAPLE structurally prunes inactive latent experts on consumer hardware without sacrificing reasoning fidelity. Reached 65+ GitHub stars, 300+ HuggingFace downloads in 24h, and featured on Hacker News and llama.cpp discussions.",
       "githubRepo": "AmSach/maple",
       "shots": [
-        "shots/maple-architecture.png",
-        "shots/maple-latency.png"
+        "shots/maple.svg"
       ],
       "stack": [
         "Python",
@@ -118,7 +117,7 @@
       "long": "VoxelNav fuses depth/LiDAR point clouds with semantic segmentation into a sparse Bayesian 3D voxel grid, enabling obstacle-aware autonomous navigation on edge robotics hardware.",
       "githubRepo": "AmSach/voxelnav",
       "shots": [
-        "shots/voxelnav-cli.svg"
+        "shots/voxelnav.svg"
       ],
       "stack": [
         "C++",
@@ -135,8 +134,7 @@
       "long": "Production B-school analytics engine benchmarking cohort retention, BG/NBD + Gamma-Gamma CLV modeling, survival analysis, and causal price elasticity across 50,000+ transactions.",
       "githubRepo": "AmSach/decision-analytics-engine",
       "shots": [
-        "shots/decision-analytics.png",
-        "shots/game-theory.png"
+        "shots/decision-engine.svg"
       ],
       "stack": [
         "Python",
@@ -153,12 +151,13 @@
       "long": "Monitors live order book feeds across venues with lock-free structures in C++20 and async Python orchestration for spread and funding-rate arbitrage.",
       "githubRepo": "AmSach/latency-engine",
       "shots": [
-        "shots/latency-cli.svg"
+        "shots/latency-engine.svg"
       ],
       "stack": [
         "C++20",
         "Async Python",
-        "Order Book"
+        "Order Book",
+        "Lock-Free"
       ],
       "url": "https://github.com/AmSach/latency-engine"
     },
@@ -169,7 +168,7 @@
       "long": "Translates natural-language mission objectives into collision-free visual-inertial waypoints for autonomous UAV flight without GPS.",
       "githubRepo": "AmSach/GhostPilot",
       "shots": [
-        "shots/ghostpilot-cli.svg"
+        "shots/ghostpilot.svg"
       ],
       "stack": [
         "Python",
@@ -186,7 +185,7 @@
       "long": "Compresses key-value attention caches on the fly during autoregressive decoding to fit large models on memory-constrained laptops.",
       "githubRepo": "AmSach/kvquant",
       "shots": [
-        "shots/kvquant-cli.svg"
+        "shots/kvquant.svg"
       ],
       "stack": [
         "Python",
@@ -203,7 +202,7 @@
       "githubRepo": "AmSach/middleout-lattice",
       "more": true,
       "shots": [
-        "shots/project-1.svg"
+        "shots/middleout.svg"
       ],
       "stack": [
         "C++",
@@ -213,38 +212,57 @@
       "url": "https://github.com/AmSach/middleout-lattice"
     },
     {
-      "name": "ComputePool Grid",
-      "tag": "Distributed · Next.js / FastAPI",
-      "desc": "Orchestration layer and spot-pricing marketplace for decentralized compute resources.",
-      "long": "Matches idle GPU/CPU nodes with batch workloads using dynamic spot pricing.",
-      "githubRepo": "AmSach/ComputePool-Grid",
+      "name": "StegaChirp",
+      "tag": "DSP · Pure Python",
+      "desc": "Ultrasonic FSK steganography for WAV files in pure Python with zero numpy or scipy dependencies.",
+      "long": "Encodes and decodes hidden payloads in ultrasonic frequency-shift keyed audio carriers.",
+      "githubRepo": "AmSach/stegachirp",
       "more": true,
       "shots": [
-        "shots/project-2.svg"
-      ],
-      "stack": [
-        "Next.js",
-        "FastAPI",
-        "Python"
-      ],
-      "url": "https://github.com/AmSach/ComputePool-Grid"
-    },
-    {
-      "name": "BitForge",
-      "tag": "Edge AI · Python",
-      "desc": "Auto-compress language models to fit on microcontrollers and pocket edge devices.",
-      "long": "Automated quantization and pruning pipeline targeting ultra-low-memory MCU deployments.",
-      "githubRepo": "AmSach/bitforge",
-      "more": true,
-      "shots": [
-        "shots/kvquant-cli.svg"
+        "shots/stegachirp.svg"
       ],
       "stack": [
         "Python",
-        "Edge AI",
-        "MCU"
+        "DSP",
+        "Audio",
+        "Steganography"
       ],
-      "url": "https://github.com/AmSach/bitforge"
+      "url": "https://github.com/AmSach/stegachirp"
+    },
+    {
+      "name": "Unlimited OCR",
+      "tag": "Desktop · Electron / Python",
+      "desc": "Zero-Cloud, 100% local offline desktop OCR application with Electron UI and ONNX high-precision engine.",
+      "long": "Air-gapped document intelligence processing high-volume filings and tables with zero outbound network calls.",
+      "githubRepo": "AmSach/unlimited-ocr",
+      "more": true,
+      "shots": [
+        "shots/unlimited-ocr.svg"
+      ],
+      "stack": [
+        "Electron",
+        "Python",
+        "ONNX",
+        "Local AI"
+      ],
+      "url": "https://github.com/AmSach/unlimited-ocr"
+    },
+    {
+      "name": "Attempt 3D Engine",
+      "tag": "Game Engine · Pure C++",
+      "desc": "From-scratch 3D game engine and zombie survival FPS in pure C++ (398KB executable, zero external frameworks).",
+      "long": "Pure software rasterizer with custom 3D math library, perspective-correct texturing, and Z-buffering.",
+      "githubRepo": "AmSach/attempt-3d-engine",
+      "more": true,
+      "shots": [
+        "shots/attempt-3d.svg"
+      ],
+      "stack": [
+        "C++",
+        "Graphics",
+        "Software Rasterizer"
+      ],
+      "url": "https://github.com/AmSach/attempt-3d-engine"
     },
     {
       "name": "KernelWeave",
@@ -258,26 +276,10 @@
       ],
       "stack": [
         "Python",
-        "LLM Agents"
+        "LLM Agents",
+        "Compilers"
       ],
       "url": "https://github.com/AmSach/kernelweave"
-    },
-    {
-      "name": "StegaChirp",
-      "tag": "DSP · Pure Python",
-      "desc": "Ultrasonic FSK steganography for WAV files in pure Python with zero numpy or scipy dependencies.",
-      "long": "Encodes and decodes hidden payloads in ultrasonic frequency-shift keyed audio carriers.",
-      "githubRepo": "AmSach/stegachirp",
-      "more": true,
-      "shots": [
-        "shots/latency-cli.svg"
-      ],
-      "stack": [
-        "Python",
-        "DSP",
-        "Audio"
-      ],
-      "url": "https://github.com/AmSach/stegachirp"
     },
     {
       "name": "SignalHop",
@@ -291,9 +293,249 @@
       ],
       "stack": [
         "Python",
-        "Telemetry"
+        "Telemetry",
+        "Networking"
       ],
       "url": "https://github.com/AmSach/SignalHop"
+    },
+    {
+      "name": "Nexus",
+      "tag": "OSINT · Python",
+      "desc": "Automated open-source intelligence and knowledge correlation engine.",
+      "long": "Gathers, correlates, and analyzes public signals across decentralized platforms.",
+      "githubRepo": "AmSach/nexus",
+      "more": true,
+      "shots": [
+        "shots/project-1.svg"
+      ],
+      "stack": [
+        "Python",
+        "OSINT",
+        "Graph Analysis"
+      ],
+      "url": "https://github.com/AmSach/nexus"
+    },
+    {
+      "name": "Lingua",
+      "tag": "Agents · Python",
+      "desc": "High-speed document translation agent preserving 600-page layout and formatting fidelity.",
+      "long": "Autonomous translation agent reconstructing exact PDF document geometry and typography.",
+      "githubRepo": "AmSach/Lingua",
+      "more": true,
+      "shots": [
+        "shots/project-2.svg"
+      ],
+      "stack": [
+        "Python",
+        "Agents",
+        "PDF",
+        "NLP"
+      ],
+      "url": "https://github.com/AmSach/Lingua"
+    },
+    {
+      "name": "Munchkin AI",
+      "tag": "Cognitive AI · Python",
+      "desc": "Autonomous desktop AI companion with a metacognitive psyche and continuous episodic memory.",
+      "long": "Implements continuous perception, episodic memory consolidation, and autonomous goal generation.",
+      "githubRepo": "AmSach/munchkin-ai",
+      "more": true,
+      "shots": [
+        "shots/project-1.svg"
+      ],
+      "stack": [
+        "Python",
+        "Cognitive AI",
+        "Local LLM"
+      ],
+      "url": "https://github.com/AmSach/munchkin-ai"
+    },
+    {
+      "name": "Diplomatic Embeddings",
+      "tag": "NLP · Python",
+      "desc": "Geopolitical knowledge graph and diplomatic intelligence engine for UN treaties and policy stance mining.",
+      "long": "Vector-based stance mining and resolution synthesizer analyzing multi-nation treaty alignments.",
+      "githubRepo": "AmSach/diplomatic-embeddings",
+      "more": true,
+      "shots": [
+        "shots/project-2.svg"
+      ],
+      "stack": [
+        "Python",
+        "Knowledge Graph",
+        "NLP"
+      ],
+      "url": "https://github.com/AmSach/diplomatic-embeddings"
+    },
+    {
+      "name": "SwarmDraft",
+      "tag": "Robotics · Python",
+      "desc": "Deterministic battery-aware task auctions for multi-agent robot swarms.",
+      "long": "Decentralized task allocation framework optimizing swarm endurance and mission throughput.",
+      "githubRepo": "AmSach/swarmdraft",
+      "more": true,
+      "shots": [
+        "shots/project-1.svg"
+      ],
+      "stack": [
+        "Python",
+        "Swarm Robotics",
+        "Auctions"
+      ],
+      "url": "https://github.com/AmSach/swarmdraft"
+    },
+    {
+      "name": "Tracelet",
+      "tag": "Distributed Systems · Python",
+      "desc": "Zero-dependency NDJSON distributed-trace critical-path summarizer.",
+      "long": "Parses large-scale distributed execution traces to extract latency bottlenecks on the critical path.",
+      "githubRepo": "AmSach/tracelet",
+      "more": true,
+      "shots": [
+        "shots/project-2.svg"
+      ],
+      "stack": [
+        "Python",
+        "Tracing",
+        "Distributed Systems"
+      ],
+      "url": "https://github.com/AmSach/tracelet"
+    },
+    {
+      "name": "LoraMesh",
+      "tag": "Networking · Python",
+      "desc": "Zero-dependency LoRa mesh simulator modeling link budget, airtime, and flood routing.",
+      "long": "Simulates packet collisions, duty cycles, and mesh propagation in pure stdlib Python.",
+      "githubRepo": "AmSach/loramesh",
+      "more": true,
+      "shots": [
+        "shots/project-1.svg"
+      ],
+      "stack": [
+        "Python",
+        "LoRa",
+        "Mesh Networks"
+      ],
+      "url": "https://github.com/AmSach/loramesh"
+    },
+    {
+      "name": "BlinkSpan",
+      "tag": "Networking · Python",
+      "desc": "Deterministic packet-level network link simulator for testing real-time protocols.",
+      "long": "Injects deterministic jitter, packet reordering, and loss curves into protocol benchmarks.",
+      "githubRepo": "AmSach/blinkspan",
+      "more": true,
+      "shots": [
+        "shots/project-2.svg"
+      ],
+      "stack": [
+        "Python",
+        "Networking",
+        "Simulation"
+      ],
+      "url": "https://github.com/AmSach/blinkspan"
+    },
+    {
+      "name": "EchoPrint",
+      "tag": "Security · Python",
+      "desc": "Zero-dependency 500-line TCP/IP stack fingerprinter in pure stdlib Python.",
+      "long": "Analyzes TCP window sizes, TTL signatures, and SYN-ACK options without nmap dependencies.",
+      "githubRepo": "AmSach/echoprint",
+      "more": true,
+      "shots": [
+        "shots/project-1.svg"
+      ],
+      "stack": [
+        "Python",
+        "Cybersecurity",
+        "TCP/IP"
+      ],
+      "url": "https://github.com/AmSach/echoprint"
+    },
+    {
+      "name": "Prompt Shield",
+      "tag": "AI Security · Python",
+      "desc": "Zero-dependency prompt-injection scanner in 200 lines with sub-millisecond evaluation.",
+      "long": "Fast heuristic and semantic scanner identifying jailbreak patterns and payload smuggling.",
+      "githubRepo": "AmSach/prompt-shield",
+      "more": true,
+      "shots": [
+        "shots/project-2.svg"
+      ],
+      "stack": [
+        "Python",
+        "AI Security",
+        "LLM Guardrails"
+      ],
+      "url": "https://github.com/AmSach/prompt-shield"
+    },
+    {
+      "name": "WhisperVault",
+      "tag": "Local AI · WebGPU",
+      "desc": "100% local in-browser second brain combining WebGPU LLM with client-side RAG.",
+      "long": "Zero servers, zero accounts: executes vector embeddings and LLM reasoning entirely inside the browser.",
+      "githubRepo": "AmSach/whispervault",
+      "more": true,
+      "shots": [
+        "shots/project-1.svg"
+      ],
+      "stack": [
+        "WebGPU",
+        "JavaScript",
+        "Local RAG"
+      ],
+      "url": "https://github.com/AmSach/whispervault"
+    },
+    {
+      "name": "PyBox",
+      "tag": "Security · Python / C",
+      "desc": "Lightweight Python sandbox using rlimits and seccomp filters for untrusted code execution.",
+      "long": "Enforces strict CPU, memory, and filesystem caps without the overhead of Docker containers.",
+      "githubRepo": "AmSach/pybox",
+      "more": true,
+      "shots": [
+        "shots/project-2.svg"
+      ],
+      "stack": [
+        "Python",
+        "Seccomp",
+        "Sandboxing"
+      ],
+      "url": "https://github.com/AmSach/pybox"
+    },
+    {
+      "name": "BTC Research",
+      "tag": "Quantitative · Python",
+      "desc": "Multi-agent BTC/USD research pipeline integrating technical, on-chain, and macro signals.",
+      "long": "Autonomous multi-agent system synthesizing market microstructure and order flow data.",
+      "githubRepo": "AmSach/btc-research",
+      "more": true,
+      "shots": [
+        "shots/latency-engine.svg"
+      ],
+      "stack": [
+        "Python",
+        "Quant",
+        "Multi-Agent"
+      ],
+      "url": "https://github.com/AmSach/btc-research"
+    },
+    {
+      "name": "Excel Node Engine",
+      "tag": "Analytics Desktop · TypeScript",
+      "desc": "Virtualized spreadsheet and decision analytics desktop engine with interactive DAG execution pipeline.",
+      "long": "Production enterprise decision engine featuring 10 prebuilt models and details.so web craftsmanship.",
+      "githubRepo": "AmSach/excel-node-engine",
+      "more": true,
+      "shots": [
+        "shots/decision-engine.svg"
+      ],
+      "stack": [
+        "TypeScript",
+        "DAG Engine",
+        "Analytics"
+      ],
+      "url": "https://github.com/AmSach/excel-node-engine"
     }
   ],
   "talks": [
@@ -305,7 +547,7 @@
       "lon": 77.59,
       "desc": "National Finalist across venture unit economics (CAC, LTV, Payback) and corporate balance sheet stress-testing.",
       "url": "https://www.linkedin.com/in/theamansachan",
-      "photo": "shots/game-theory.png",
+      "photo": "shots/talk-iimb.svg",
       "photos": []
     },
     {
@@ -316,7 +558,7 @@
       "lon": 75.86,
       "desc": "National Finalist in business strategy (Enigma) and applied tech hackathon (Epinoia).",
       "url": "https://www.linkedin.com/in/theamansachan",
-      "photo": "shots/decision-analytics.png",
+      "photo": "shots/talk-iimi.svg",
       "photos": []
     },
     {
@@ -327,7 +569,7 @@
       "lon": 72.88,
       "desc": "Runner-up in autonomous robotics hardware build and real-time navigation.",
       "url": "https://github.com/AmSach/voxelnav",
-      "photo": "shots/voxelnav-cli.svg",
+      "photo": "shots/talk-iitb.svg",
       "photos": []
     },
     {
@@ -338,7 +580,7 @@
       "lon": 77.21,
       "desc": "2nd Runner-up at IIT Kanpur Techkriti; National Finalist at IIT Delhi Stratagize supply chain case.",
       "url": "https://www.linkedin.com/in/theamansachan",
-      "photo": "shots/capital-sankey.png",
+      "photo": "shots/talk-iitk.svg",
       "photos": []
     }
   ],
