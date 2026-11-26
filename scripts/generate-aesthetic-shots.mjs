@@ -121,14 +121,14 @@ const mapleSvg = createTerminalSvg({
   <rect x="418" y="285" width="12" height="25" fill="#334155" rx="2"/>
   <rect x="434" y="295" width="12" height="15" fill="#334155" rx="2"/>
   <rect x="450" y="298" width="12" height="12" fill="#334155" rx="2"/>
-  <text x="310" y="325" fill="#4ade80" font-family="monospace" font-size="10">Retained Top-k (Active)</text>
-  <text x="420" y="325" fill="#64748b" font-family="monospace" font-size="10">Excised (Dormant)</text>
+  <text x="290" y="335" fill="#4ade80" font-family="monospace" font-size="9.5">Retained (Active)</text>
+  <text x="390" y="335" fill="#64748b" font-family="monospace" font-size="9.5">Excised (Dormant)</text>
 
   <!-- Throughput Curve -->
   <polyline points="490,300 530,270 570,240 610,210 650,180 690,165 730,160" fill="none" stroke="url(#cyanLine)" stroke-width="3"/>
   <circle cx="730" cy="160" r="4" fill="#38bdf8"/>
   <text x="640" y="150" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">45.4 tok/s</text>
-  <text x="490" y="315" fill="#64748b" font-family="monospace" font-size="9">CPU offload 12.1 tok/s</text>`,
+  <text x="500" y="335" fill="#64748b" font-family="monospace" font-size="9">CPU baseline: 12.1 tok/s</text>`,
   statusText: "✓ Pruning complete · Softmax invariance verified · GGUF exported",
   subText: "Target 1.48 BPW · Retains STEM/Code reasoning · Zero CPU PCIe stalls"
 });
