@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "JetBrains Mono", monospace; }
+  body { background: #06080c; color: #e2e8f0; width: 1600px; height: 920px; overflow: hidden; display: flex; flex-direction: column; padding: 24px; }
+  
+  .window { background: #0c1018; border: 1px solid #1a2336; border-radius: 12px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85); }
+  
+  .topbar { background: #111623; border-bottom: 1px solid #1a2336; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .controls { display: flex; gap: 8px; align-items: center; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+  .window-title { font-size: 13px; font-family: "JetBrains Mono", monospace; color: #8b949e; }
+  .pill { font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-family: "JetBrains Mono", monospace; }
+  .pill-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+  .pill-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+  .metrics-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 16px 20px; background: #0e131e; border-bottom: 1px solid #182133; }
+  .m-card { background: #121826; border: 1px solid #1e293f; border-radius: 8px; padding: 12px 16px; }
+  .m-label { font-size: 11px; color: #64748b; text-transform: uppercase; font-family: "JetBrains Mono", monospace; margin-bottom: 4px; }
+  .m-val { font-size: 22px; font-weight: 700; color: #f8fafc; font-family: "JetBrains Mono", monospace; }
+
+  .workspace { display: grid; grid-template-columns: 1fr 440px; flex: 1; min-height: 0; }
+  .chart-pane { padding: 20px; display: flex; flex-direction: column; gap: 14px; background: #080b12; }
+  .chart-box { background: #0d121e; border: 1px solid #1a2336; border-radius: 8px; flex: 1; padding: 16px; position: relative; }
+  
+  .side-pane { border-left: 1px solid #1a2336; padding: 20px; background: #0a0e16; display: flex; flex-direction: column; gap: 14px; }
+  .side-card { background: #111724; border: 1px solid #1b253a; border-radius: 8px; padding: 14px; font-family: "JetBrains Mono", monospace; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="topbar">
+    <div class="controls">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="window-title" style="margin-left: 12px;">kvquant_bench // attention_cache_scaling_suite.py</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <div class="pill pill-purple">2-BIT ASYMMETRIC QUANTIZATION</div>
+      <div class="pill pill-green">128,000 CONTEXT TOKENS</div>
+    </div>
+  </div>
+
+  <div class="metrics-strip">
+    <div class="m-card">
+      <div class="m-label">Memory Footprint Savings</div>
+      <div class="m-val" style="color: #10b981;">-75.4% <span style="font-size: 12px; color: #10b981;">(4x Batch Size)</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Perplexity Degradation</div>
+      <div class="m-val">+0.04 <span style="font-size: 12px; color: #10b981;">(Near-Lossless)</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Token Dequant Latency</div>
+      <div class="m-val">0.12 <span style="font-size: 12px; color: #64748b;">ms / chunk</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Max Context Length</div>
+      <div class="m-val" style="color: #c084fc;">128k <span style="font-size: 12px; color: #64748b;">Tokens</span></div>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <div class="chart-pane">
+      <div class="chart-box">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+          <span style="color: #94a3b8; font-weight: 700;">KV CACHE VRAM CONSUMPTION VS CONTEXT LENGTH</span>
+          <span style="color: #10b981;">KVQuant 2-Bit vs FP16 Baseline</span>
+        </div>
+        <svg viewBox="0 0 1000 480" style="width: 100%; height: 100%;">
+          <line x1="60" y1="420" x2="940" y2="420" stroke="#1c2538" stroke-width="1" />
+          <line x1="60" y1="340" x2="940" y2="340" stroke="#151d2d" stroke-width="1" stroke-dasharray="4,4" />
+          <line x1="60" y1="260" x2="940" y2="260" stroke="#151d2d" stroke-width="1" stroke-dasharray="4,4" />
+          <line x1="60" y1="180" x2="940" y2="180" stroke="#151d2d" stroke-width="1" stroke-dasharray="4,4" />
+          <line x1="60" y1="100" x2="940" y2="100" stroke="#151d2d" stroke-width="1" stroke-dasharray="4,4" />
+          <line x1="60" y1="40" x2="60" y2="420" stroke="#1c2538" stroke-width="1" />
+
+          <!-- FP16 Exploding line with area fill -->
+          <path d="M 100 390 L 300 340 L 500 240 L 680 90 L 680 420 L 100 420 Z" fill="rgba(239, 68, 68, 0.06)" />
+          <path d="M 100 390 L 300 340 L 500 240 L 680 90" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,4" />
+          <circle cx="680" cy="90" r="6" fill="#ef4444" />
+          <text x="695" y="95" fill="#ef4444" font-size="12" font-weight="bold" font-family="JetBrains Mono">FP16 CRASH: OOM @ 64k (28.2 GB)</text>
+
+          <!-- KVQuant flat line with area fill -->
+          <path d="M 100 410 L 300 400 L 500 380 L 700 355 L 900 330 L 900 420 L 100 420 Z" fill="rgba(16, 185, 129, 0.06)" />
+          <path d="M 100 410 L 300 400 L 500 380 L 700 355 L 900 330" fill="none" stroke="#10b981" stroke-width="3" />
+          <circle cx="900" cy="330" r="6" fill="#10b981" />
+          <text x="750" y="315" fill="#10b981" font-size="12" font-weight="bold" font-family="JetBrains Mono">KVQuant: 6.8 GB @ 128k Tokens</text>
+
+          <!-- Axis markings -->
+          <text x="100" y="445" fill="#64748b" font-size="11" font-family="JetBrains Mono">4k</text>
+          <text x="300" y="445" fill="#64748b" font-size="11" font-family="JetBrains Mono">16k</text>
+          <text x="500" y="445" fill="#64748b" font-size="11" font-family="JetBrains Mono">32k</text>
+          <text x="700" y="445" fill="#64748b" font-size="11" font-family="JetBrains Mono">64k</text>
+          <text x="900" y="445" fill="#64748b" font-size="11" font-family="JetBrains Mono">128k</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="side-pane">
+      <div class="side-card">
+        <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8; margin-bottom: 8px;">Non-Uniform Outlier Retention</div>
+        <p style="font-size: 11px; color: #64748b; line-height: 1.5;">
+          Preserves critical outlier channel activations in FP16 while quantizing 99.2% of attention matrices to 2-bit asymmetric representation.
+        </p>
+      </div>
+      <div class="side-card">
+        <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8; margin-bottom: 8px;">CUDA Kernel Acceleration</div>
+        <p style="font-size: 11px; color: #64748b; line-height: 1.5;">
+          Custom fused warp-shuffle dequantization kernel runs concurrently with matrix multiplication, adding near-zero compute latency.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

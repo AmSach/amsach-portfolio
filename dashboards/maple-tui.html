@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: "JetBrains Mono", monospace; }
+  body { background: #050608; color: #cbd5e1; width: 1600px; height: 920px; overflow: hidden; padding: 24px; }
+  
+  .tui-window { background: #0a0d13; border: 1px solid #1a2334; border-radius: 8px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9); }
+  
+  .tui-header { background: #111724; padding: 10px 18px; border-bottom: 1px solid #1a2334; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+  .tui-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; padding: 16px; flex: 1; }
+  
+  .tui-box { background: #080b10; border: 1px solid #162030; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; }
+  .tui-title { font-size: 11px; text-transform: uppercase; color: #38bdf8; font-weight: 700; margin-bottom: 8px; border-bottom: 1px dashed #1a263a; padding-bottom: 4px; }
+  
+  .ascii-bar { font-size: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="tui-window">
+  <div class="tui-header">
+    <span>[MAPLE-CLI v1.4.2] -- MANIFOLD-ACTIVATED PRUNING SUITE -- HOST: amsach-laptop</span>
+    <span style="color: #10b981;">STATUS: 45.4 TOK/S · VRAM: 4.75G/6.00G</span>
+  </div>
+
+  <div class="tui-grid">
+    <div class="tui-box">
+      <div class="tui-title">1. Layer-by-Layer MoE Activation Entropy</div>
+      <div class="ascii-bar">
+        L01: [████████████████████████████░░░░░░] 78.4% (Active: 3/8)<br>
+        L02: [████████████████████████░░░░░░░░░░] 64.2% (Active: 2/8)<br>
+        L03: [████████████████████████████████░░] 92.1% (Active: 4/8)<br>
+        L04: [████████████████░░░░░░░░░░░░░░░░░░] 41.5% (Active: 1/8)<br>
+        L05: [██████████████████████████░░░░░░░░] 71.0% (Active: 3/8)<br>
+        L06: [██████████████████████████████░░░░] 84.8% (Active: 4/8)<br>
+        L07: [████████████░░░░░░░░░░░░░░░░░░░░░░] 32.6% (Active: 1/8)<br>
+        L08: [██████████████████████████████████] 99.4% (Active: 4/8)
+      </div>
+    </div>
+
+    <div class="tui-box">
+      <div class="tui-title">2. Excised Expert Null-Space Invariance</div>
+      <div style="font-size: 12px; line-height: 1.6; color: #94a3b8;">
+        Target BPW : 1.48 BPW (Sub-2-BPW Boundary)<br>
+        Excised    : 80 / 128 Latent Experts Removed<br>
+        SVD Norm Δ : ||W_pruned - W_orig||_F = 0.0024<br>
+        Logit Loss : KL-Divergence = 0.0142 nats<br>
+        Zero host-swap latency penalty across 24h stress test.
+      </div>
+    </div>
+
+    <div class="tui-box">
+      <div class="tui-title">3. Real-Time Token Generation Trace</div>
+      <div style="font-size: 11px; line-height: 1.5; color: #10b981;">
+        [00:04:12] Token #0128: "Poincaré" [P=0.984, Expert=E07, Latency=21.8ms]<br>
+        [00:04:12] Token #0129: "half-plane" [P=0.991, Expert=E15, Latency=22.1ms]<br>
+        [00:04:12] Token #0130: "metric" [P=0.978, Expert=E07, Latency=21.9ms]<br>
+        [00:04:12] Token #0131: "ds^2" [P=0.995, Expert=E44, Latency=22.0ms]<br>
+        [00:04:12] Token #0132: "=" [P=0.999, Expert=E44, Latency=21.8ms]<br>
+        [00:04:12] Token #0133: "(dx^2+dy^2)/y^2" [P=0.994, Expert=E44, Latency=22.2ms]
+      </div>
+    </div>
+
+    <div class="tui-box">
+      <div class="tui-title">4. Hardware Execution Context</div>
+      <div style="font-size: 12px; line-height: 1.6; color: #cbd5e1;">
+        Device   : NVIDIA GeForce RTX 4060 Laptop (8GB TGP 105W)<br>
+        Allocated: 4.75 GB VRAM (Weights 3.12 GB + KV 1.63 GB)<br>
+        CUDA Core: 3072 Cuda Cores @ 2370 MHz<br>
+        Driver   : 560.35.03 / CUDA 12.4 / cuDNN 9.1<br>
+        Host Swap: 0 bytes swapped to system RAM
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
  "owner": "AmSach",
- "fetchedAt": "2026-11-26T20:18:50.828Z",
+ "fetchedAt": "2026-11-26T20:41:56.939Z",
  "about": {
   "repo": "AmSach",
   "lines": [
@@ -47,9 +47,15 @@
    ],
    "images": [
     {
-     "file": "shots/maple.svg",
-     "source": "shots/maple.svg",
+     "file": "shots/maple.png",
+     "source": "shots/maple.png",
      "alt": "MAPLE screenshot 1",
+     "xray": false
+    },
+    {
+     "file": "shots/maple-2.png",
+     "source": "shots/maple-2.png",
+     "alt": "MAPLE screenshot 2",
      "xray": false
     }
    ],
@@ -68,6 +74,8 @@
     "downloads within 24 hours of release.",
     "",
     "Built with Python · PyTorch · GGUF · MoE · CUDA",
+    "",
+    "\u0001IMG1\u0001",
     "",
     "[Visit](https://github.com/AmSach/maple)"
    ]
@@ -98,8 +106,8 @@
    ],
    "images": [
     {
-     "file": "shots/voxelnav.svg",
-     "source": "shots/voxelnav.svg",
+     "file": "shots/voxelnav.png",
+     "source": "shots/voxelnav.png",
      "alt": "VoxelNav screenshot 1",
      "xray": false
     }
@@ -148,8 +156,8 @@
    ],
    "images": [
     {
-     "file": "shots/decision-engine.svg",
-     "source": "shots/decision-engine.svg",
+     "file": "shots/decision-engine.png",
+     "source": "shots/decision-engine.png",
      "alt": "Decision Analytics Engine screenshot 1",
      "xray": false
     }
@@ -198,8 +206,8 @@
    ],
    "images": [
     {
-     "file": "shots/latency-engine.svg",
-     "source": "shots/latency-engine.svg",
+     "file": "shots/latency-engine.png",
+     "source": "shots/latency-engine.png",
      "alt": "Latency Engine screenshot 1",
      "xray": false
     }
@@ -247,8 +255,8 @@
    ],
    "images": [
     {
-     "file": "shots/ghostpilot.svg",
-     "source": "shots/ghostpilot.svg",
+     "file": "shots/ghostpilot.png",
+     "source": "shots/ghostpilot.png",
      "alt": "GhostPilot screenshot 1",
      "xray": false
     }
@@ -295,8 +303,8 @@
    ],
    "images": [
     {
-     "file": "shots/kvquant.svg",
-     "source": "shots/kvquant.svg",
+     "file": "shots/kvquant.png",
+     "source": "shots/kvquant.png",
      "alt": "KVQuant screenshot 1",
      "xray": false
     }
@@ -1185,8 +1193,8 @@
    ],
    "images": [
     {
-     "file": "shots/latency-engine.svg",
-     "source": "shots/latency-engine.svg",
+     "file": "shots/latency-engine.png",
+     "source": "shots/latency-engine.png",
      "alt": "BTC Research screenshot 1",
      "xray": false
     }
@@ -1231,8 +1239,8 @@
    ],
    "images": [
     {
-     "file": "shots/decision-engine.svg",
-     "source": "shots/decision-engine.svg",
+     "file": "shots/decision-engine.png",
+     "source": "shots/decision-engine.png",
      "alt": "Excel Node Engine screenshot 1",
      "xray": false
     }

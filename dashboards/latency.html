@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "JetBrains Mono", monospace; }
+  body { background: #06080c; color: #e2e8f0; width: 1600px; height: 920px; overflow: hidden; display: flex; flex-direction: column; padding: 24px; }
+  
+  .window { background: #0b0e15; border: 1px solid #1a2336; border-radius: 12px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85); }
+  
+  .topbar { background: #101522; border-bottom: 1px solid #1a2336; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .controls { display: flex; gap: 8px; align-items: center; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+  .window-title { font-size: 13px; font-family: "JetBrains Mono", monospace; color: #8b949e; }
+  .pill { font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-family: "JetBrains Mono", monospace; }
+  .pill-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+  .pill-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+  .metrics-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 16px 20px; background: #0d121c; border-bottom: 1px solid #172031; }
+  .m-card { background: #121825; border: 1px solid #1c2538; border-radius: 8px; padding: 12px 16px; }
+  .m-label { font-size: 11px; color: #64748b; text-transform: uppercase; font-family: "JetBrains Mono", monospace; margin-bottom: 4px; }
+  .m-val { font-size: 22px; font-weight: 700; color: #f8fafc; font-family: "JetBrains Mono", monospace; }
+
+  .workspace { display: grid; grid-template-columns: 1fr 480px; flex: 1; min-height: 0; }
+  
+  .left-pane { padding: 18px; display: flex; flex-direction: column; gap: 12px; background: #070a10; }
+  .orderbook-ladder { background: #0b0f17; border: 1px solid #192233; border-radius: 8px; flex: 1; padding: 12px; display: flex; flex-direction: column; font-family: "JetBrains Mono", monospace; font-size: 12px; }
+  
+  .ladder-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; padding: 4px 8px; border-radius: 4px; position: relative; margin-bottom: 2px; }
+  .ladder-bid { color: #10b981; }
+  .ladder-ask { color: #ef4444; }
+  .depth-bar { position: absolute; top: 0; bottom: 0; right: 0; opacity: 0.15; border-radius: 4px; pointer-events: none; }
+
+  .right-pane { border-left: 1px solid #1a2336; padding: 18px; background: #090c13; display: flex; flex-direction: column; gap: 12px; }
+  .stat-box { background: #0d121c; border: 1px solid #192233; border-radius: 8px; padding: 12px; font-family: "JetBrains Mono", monospace; }
+  
+  .trade-feed { background: #06090e; border: 1px solid #161e2e; border-radius: 6px; padding: 10px; font-size: 11px; line-height: 1.5; color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="topbar">
+    <div class="controls">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="window-title" style="margin-left: 12px;">kairos_lob_engine // c++20_lockfree_orderbook</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <div class="pill pill-green">TICK-TO-TRADE: 780 NS</div>
+      <div class="pill pill-red">ZERO KERNEL CONTEXT SWITCHES</div>
+    </div>
+  </div>
+
+  <div class="metrics-strip">
+    <div class="m-card">
+      <div class="m-label">Tick-to-Trade Latency</div>
+      <div class="m-val" style="color: #10b981;">780 <span style="font-size: 13px; color: #64748b;">nanoseconds</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Throughput Capacity</div>
+      <div class="m-val">4.2M <span style="font-size: 13px; color: #64748b;">orders/sec</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Hardware Bypass</div>
+      <div class="m-val" style="color: #38bdf8;">Solarflare ef_vi <span style="font-size: 13px; color: #64748b;">(DPDK)</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">L1 Data Cache Miss</div>
+      <div class="m-val" style="color: #10b981;">0.04% <span style="font-size: 13px; color: #64748b;">(Core Pinning)</span></div>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <div class="left-pane">
+      <div class="orderbook-ladder">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; padding: 6px 8px; font-size: 11px; color: #64748b; border-bottom: 1px solid #1a2233; margin-bottom: 4px;">
+          <span>SIDE / VENUE</span>
+          <span>PRICE (USDT)</span>
+          <span>SIZE (BTC)</span>
+          <span>TOTAL DEPTH</span>
+        </div>
+        
+        <!-- ASKS (Red) -->
+        <div class="ladder-row ladder-ask"><div class="depth-bar" style="width: 82%; background: #ef4444;"></div><span>ASK · BINANCE</span><span>68,496.50</span><span>3.40</span><span>17.60 BTC</span></div>
+        <div class="ladder-row ladder-ask"><div class="depth-bar" style="width: 75%; background: #ef4444;"></div><span>ASK · BINANCE</span><span>68,496.00</span><span>2.85</span><span>14.20 BTC</span></div>
+        <div class="ladder-row ladder-ask"><div class="depth-bar" style="width: 58%; background: #ef4444;"></div><span>ASK · COINBASE</span><span>68,495.50</span><span>1.40</span><span>11.35 BTC</span></div>
+        <div class="ladder-row ladder-ask"><div class="depth-bar" style="width: 42%; background: #ef4444;"></div><span>ASK · KRAKEN</span><span>68,495.00</span><span>1.15</span><span>9.95 BTC</span></div>
+        <div class="ladder-row ladder-ask"><div class="depth-bar" style="width: 28%; background: #ef4444;"></div><span>ASK · BINANCE</span><span>68,494.50</span><span>0.68</span><span>8.80 BTC</span></div>
+        <div class="ladder-row ladder-ask"><div class="depth-bar" style="width: 15%; background: #ef4444;"></div><span>ASK · BYBIT</span><span>68,494.00</span><span>0.42</span><span>8.12 BTC</span></div>
+
+        <!-- SPREAD -->
+        <div style="padding: 7px; text-align: center; color: #f59e0b; background: rgba(245, 158, 11, 0.08); border-radius: 4px; margin: 4px 0; font-size: 11px; font-weight: bold;">
+          SPREAD: 0.50 USDT (0.0007%) · TOB ARBITRAGE OPPORTUNITY (+14.2 BPS)
+        </div>
+
+        <!-- BIDS (Green) -->
+        <div class="ladder-row ladder-bid"><div class="depth-bar" style="width: 18%; background: #10b981;"></div><span>BID · BINANCE</span><span>68,493.50</span><span>0.65</span><span>0.65 BTC</span></div>
+        <div class="ladder-row ladder-bid"><div class="depth-bar" style="width: 32%; background: #10b981;"></div><span>BID · COINBASE</span><span>68,493.00</span><span>1.80</span><span>2.45 BTC</span></div>
+        <div class="ladder-row ladder-bid"><div class="depth-bar" style="width: 48%; background: #10b981;"></div><span>BID · KRAKEN</span><span>68,492.50</span><span>3.10</span><span>5.55 BTC</span></div>
+        <div class="ladder-row ladder-bid"><div class="depth-bar" style="width: 65%; background: #10b981;"></div><span>BID · BINANCE</span><span>68,492.00</span><span>4.95</span><span>10.50 BTC</span></div>
+        <div class="ladder-row ladder-bid"><div class="depth-bar" style="width: 78%; background: #10b981;"></div><span>BID · BYBIT</span><span>68,491.50</span><span>3.80</span><span>14.30 BTC</span></div>
+        <div class="ladder-row ladder-bid"><div class="depth-bar" style="width: 90%; background: #10b981;"></div><span>BID · COINBASE</span><span>68,491.00</span><span>5.10</span><span>19.40 BTC</span></div>
+      </div>
+    </div>
+
+    <div class="right-pane">
+      <div class="stat-box">
+        <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8; margin-bottom: 6px;">Live Sub-Microsecond Executions</div>
+        <div class="trade-feed">
+          <span style="color: #10b981;">[09:30:00.184029] FILL BUY 0.50 BTC @ 68,493.50 (742ns)</span><br>
+          <span style="color: #ef4444;">[09:30:00.184102] FILL SELL 0.25 BTC @ 68,494.00 (710ns)</span><br>
+          <span style="color: #f59e0b;">[09:30:00.184215] ARB SWEEP 1.20 BTC BINANCE &lt;-&gt; COINBASE (+14.2 bps)</span><br>
+          <span style="color: #10b981;">[09:30:00.184330] FILL BUY 2.10 BTC @ 68,493.50 (768ns)</span>
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8; margin-bottom: 6px;">Lock-Free Ring Buffer</div>
+        <p style="font-size: 11px; color: #64748b; line-height: 1.5;">
+          Zero heap allocations on the critical path. Atomic cache-line-padded ring buffers eliminate false sharing between matching core and network thread.
+        </p>
+      </div>
+
+      <div class="stat-box">
+        <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8; margin-bottom: 6px;">Kernel-Bypass Socket Layer</div>
+        <p style="font-size: 11px; color: #64748b; line-height: 1.5;">
+          Custom zero-copy user-space ring buffers achieve 780ns tick-to-trade response to market maker order cancellations.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "JetBrains Mono", monospace; }
+  body { background: #05070a; color: #e2e8f0; width: 1600px; height: 920px; overflow: hidden; display: flex; flex-direction: column; padding: 24px; }
+  
+  .window { background: #07090e; border: 1px solid #161e2d; border-radius: 12px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9); }
+  
+  .topbar { background: #0b0f18; border-bottom: 1px solid #161e2d; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .controls { display: flex; gap: 8px; align-items: center; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+  .window-title { font-size: 13px; font-family: "JetBrains Mono", monospace; color: #8b949e; }
+  .pill { font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-family: "JetBrains Mono", monospace; }
+  .pill-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .pill-amber { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+  .hud-body { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #111a2e 0%, #040508 100%); overflow: hidden; }
+
+  .hud-overlay { position: absolute; width: 100%; height: 100%; pointer-events: none; }
+  
+  .hud-panel-left { position: absolute; top: 30px; left: 30px; display: flex; flex-direction: column; gap: 12px; }
+  .hud-panel-right { position: absolute; top: 30px; right: 30px; display: flex; flex-direction: column; gap: 12px; text-align: right; }
+  .hud-metric { background: rgba(11, 15, 24, 0.88); border: 1px solid #1a2336; border-radius: 8px; padding: 10px 14px; font-family: "JetBrains Mono", monospace; backdrop-filter: blur(8px); }
+  .metric-label { font-size: 10px; color: #64748b; text-transform: uppercase; margin-bottom: 2px; }
+  .metric-val { font-size: 20px; font-weight: 700; color: #f8fafc; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="topbar">
+    <div class="controls">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="window-title" style="margin-left: 12px;">ghostpilot_telemetry // mavlink_stream (UAV-01)</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <div class="pill pill-amber">GPS-DENIED INDOOR NAVIGATION</div>
+      <div class="pill pill-green">OPTICAL FLOW LOCK (99%)</div>
+    </div>
+  </div>
+
+  <div class="hud-body">
+    <svg class="hud-overlay" viewBox="0 0 1550 820">
+      <!-- Simulated tunnel wireframe -->
+      <line x1="180" y1="80" x2="600" y2="340" stroke="#1c2538" stroke-width="1.5" />
+      <line x1="1370" y1="80" x2="950" y2="340" stroke="#1c2538" stroke-width="1.5" />
+      <line x1="180" y1="740" x2="600" y2="480" stroke="#1c2538" stroke-width="1.5" />
+      <line x1="1370" y1="740" x2="950" y2="480" stroke="#1c2538" stroke-width="1.5" />
+      <rect x="600" y="340" width="350" height="140" fill="none" stroke="#25324a" stroke-width="2" />
+
+      <!-- Compass Tape at Top -->
+      <rect x="625" y="40" width="300" height="28" fill="rgba(11, 15, 24, 0.7)" stroke="#1a2336" rx="4" />
+      <text x="775" y="58" fill="#10b981" font-size="12" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">▲ 142° NW</text>
+
+      <!-- Pitch Ladder -->
+      <line x1="715" y1="390" x2="835" y2="390" stroke="#10b981" stroke-width="2" />
+      <line x1="735" y1="365" x2="815" y2="365" stroke="#10b981" stroke-width="1.5" />
+      <line x1="735" y1="415" x2="815" y2="415" stroke="#10b981" stroke-width="1.5" />
+      <text x="825" y="369" fill="#10b981" font-size="9" font-family="JetBrains Mono">+5°</text>
+      <text x="825" y="419" fill="#10b981" font-size="9" font-family="JetBrains Mono">-5°</text>
+
+      <!-- Flight Path Crosshair Reticle -->
+      <circle cx="775" cy="390" r="18" fill="none" stroke="#10b981" stroke-width="2" />
+      <line x1="750" y1="390" x2="740" y2="390" stroke="#10b981" stroke-width="2" />
+      <line x1="800" y1="390" x2="810" y2="390" stroke="#10b981" stroke-width="2" />
+      <line x1="775" y1="365" x2="775" y2="355" stroke="#10b981" stroke-width="2" />
+      <line x1="775" y1="415" x2="775" y2="425" stroke="#10b981" stroke-width="2" />
+
+      <!-- Optical Flow Tracked Feature Vectors -->
+      <g stroke="#10b981" stroke-width="1.5">
+        <path d="M 450 320 L 450 330 M 445 325 L 455 325" />
+        <line x1="450" y1="325" x2="442" y2="322" stroke="#38bdf8" stroke-width="1.5" />
+        <path d="M 520 280 L 520 290 M 515 285 L 525 285" />
+        <line x1="520" y1="285" x2="512" y2="282" stroke="#38bdf8" stroke-width="1.5" />
+        <path d="M 1020 300 L 1020 310 M 1015 305 L 1025 305" />
+        <line x1="1020" y1="305" x2="1028" y2="302" stroke="#38bdf8" stroke-width="1.5" />
+        <path d="M 1100 360 L 1100 370 M 1095 365 L 1105 365" />
+        <line x1="1100" y1="365" x2="1108" y2="362" stroke="#38bdf8" stroke-width="1.5" />
+        <path d="M 420 540 L 420 550 M 415 545 L 425 545" />
+        <line x1="420" y1="545" x2="412" y2="548" stroke="#38bdf8" stroke-width="1.5" />
+        <path d="M 1080 520 L 1080 530 M 1075 525 L 1085 525" />
+        <line x1="1080" y1="525" x2="1088" y2="528" stroke="#38bdf8" stroke-width="1.5" />
+      </g>
+    </svg>
+
+    <div class="hud-panel-left">
+      <div class="hud-metric">
+        <div class="metric-label">Barometric Altitude</div>
+        <div class="metric-val">3.45 <span style="font-size: 12px; color: #64748b;">m AGL</span></div>
+      </div>
+      <div class="hud-metric">
+        <div class="metric-label">Optical Flow Drift</div>
+        <div class="metric-val" style="color: #10b981;">0.02 <span style="font-size: 12px; color: #64748b;">m/s</span></div>
+      </div>
+      <div class="hud-metric">
+        <div class="metric-label">VIO Confidence</div>
+        <div class="metric-val" style="color: #10b981;">99.4%</div>
+      </div>
+    </div>
+
+    <div class="hud-panel-right">
+      <div class="hud-metric">
+        <div class="metric-label">Battery 6S LiPo</div>
+        <div class="metric-val" style="color: #10b981;">22.4V <span style="font-size: 12px; color: #64748b;">(84%)</span></div>
+      </div>
+      <div class="hud-metric">
+        <div class="metric-label">Forward Rangefinder</div>
+        <div class="metric-val">8.2 <span style="font-size: 12px; color: #64748b;">meters</span></div>
+      </div>
+      <div class="hud-metric">
+        <div class="metric-label">Tunnel Clearance</div>
+        <div class="metric-val" style="color: #10b981;">CLEAR</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

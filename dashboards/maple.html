@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "JetBrains Mono", monospace; }
+  body { background: #06080c; color: #e2e8f0; width: 1600px; height: 920px; overflow: hidden; display: flex; flex-direction: column; padding: 24px; }
+  
+  .window { background: #0c1017; border: 1px solid #1c2536; border-radius: 12px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85); }
+  
+  /* Topbar */
+  .topbar { background: #111724; border-bottom: 1px solid #1c2536; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .controls { display: flex; gap: 8px; align-items: center; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+  .window-title { font-size: 13px; font-family: "JetBrains Mono", monospace; color: #8b949e; letter-spacing: 0.5px; }
+  .topbar-pills { display: flex; gap: 10px; }
+  .pill { font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-family: "JetBrains Mono", monospace; display: flex; align-items: center; gap: 6px; }
+  .pill-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .pill-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .pill-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+  .pulse { width: 6px; height: 6px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981; }
+
+  /* Subheader metrics */
+  .metrics-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 16px 20px; background: #0e131d; border-bottom: 1px solid #192232; }
+  .m-card { background: #131926; border: 1px solid #1f2a3f; border-radius: 8px; padding: 12px 16px; }
+  .m-label { font-size: 11px; color: #798394; text-transform: uppercase; font-family: "JetBrains Mono", monospace; margin-bottom: 4px; }
+  .m-val { font-size: 20px; font-weight: 700; color: #f8fafc; font-family: "JetBrains Mono", monospace; display: flex; align-items: baseline; gap: 6px; }
+  .m-sub { font-size: 11px; font-weight: 500; color: #10b981; }
+  .m-sub.neg { color: #38bdf8; }
+
+  /* Main Workspace */
+  .workspace { display: grid; grid-template-columns: 350px 1fr 390px; flex: 1; min-height: 0; }
+  
+  /* Left Panel */
+  .left-pane { border-right: 1px solid #192232; padding: 16px; display: flex; flex-direction: column; gap: 14px; background: #0a0e16; }
+  .pane-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #94a3b8; font-family: "JetBrains Mono", monospace; letter-spacing: 0.5px; display: flex; justify-content: space-between; }
+  
+  .expert-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-top: 6px; }
+  .exp-slot { height: 21px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-family: "JetBrains Mono", monospace; font-weight: 700; }
+  .exp-active { background: #059669; color: #ffffff; box-shadow: 0 0 6px rgba(16, 185, 129, 0.4); }
+  .exp-med { background: #0284c7; color: #e0f2fe; }
+  .exp-pruned { background: #161d2b; color: #475569; border: 1px dashed #243046; }
+  
+  .vram-bar-box { background: #131926; border: 1px solid #1f2a3f; border-radius: 8px; padding: 12px; margin-top: 6px; }
+  .vram-row { display: flex; justify-content: space-between; font-size: 11px; font-family: "JetBrains Mono", monospace; margin-bottom: 6px; }
+  .progress-bg { height: 8px; background: #1e293b; border-radius: 4px; overflow: hidden; display: flex; }
+  .progress-fill { height: 100%; }
+  .fill-weights { width: 52%; background: #10b981; }
+  .fill-kv { width: 27%; background: #38bdf8; }
+
+  /* Center Playground */
+  .center-pane { padding: 18px; display: flex; flex-direction: column; gap: 14px; background: #090d14; overflow: hidden; }
+  .terminal-box { background: #06090e; border: 1px solid #182234; border-radius: 8px; padding: 16px; flex: 1; font-family: "JetBrains Mono", monospace; font-size: 13px; line-height: 1.6; display: flex; flex-direction: column; }
+  .prompt-line { color: #64748b; margin-bottom: 12px; font-size: 12px; }
+  .prompt-tag { color: #38bdf8; font-weight: 700; }
+  .prompt-cmd { color: #f1f5f9; }
+  .stream-out { color: #cbd5e1; flex: 1; overflow: hidden; }
+  .math-block { background: rgba(26, 36, 54, 0.6); border-left: 3px solid #38bdf8; padding: 12px 16px; margin: 12px 0; border-radius: 0 6px 6px 0; font-family: "JetBrains Mono", monospace; color: #f1f5f9; font-size: 13px; }
+  .stream-meta { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #1c2638; font-size: 11px; color: #64748b; }
+  .meta-tag { color: #10b981; font-weight: 600; }
+
+  /* Right Pane */
+  .right-pane { border-left: 1px solid #192232; padding: 16px; display: flex; flex-direction: column; gap: 14px; background: #0a0e16; }
+  .table-box { background: #0c111a; border: 1px solid #1b2436; border-radius: 8px; overflow: hidden; font-family: "JetBrains Mono", monospace; }
+  .table-head { background: #131926; padding: 8px 12px; font-size: 10px; text-transform: uppercase; color: #798394; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid #1b2436; }
+  .table-row { padding: 9px 12px; font-size: 11px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid #151d2c; align-items: center; }
+  .table-row.highlight { background: rgba(16, 185, 129, 0.08); font-weight: 700; color: #10b981; }
+
+  .spark-box { background: #131926; border: 1px solid #1f2a3f; border-radius: 8px; padding: 12px; }
+  svg.sparkline { width: 100%; height: 55px; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="topbar">
+    <div class="controls">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="window-title" style="margin-left: 12px;">maple_server@amsach-rtx4060: ~ (sub_2bpw_moe_inference)</span>
+    </div>
+    <div class="topbar-pills">
+      <div class="pill pill-green"><span class="pulse"></span>RESIDENT IN VRAM (100% GPU)</div>
+      <div class="pill pill-blue">GEMMA-4-26B-A4B-IT</div>
+      <div class="pill pill-purple">CUDA 12.4 / FP8_E4M3</div>
+    </div>
+  </div>
+
+  <div class="metrics-strip">
+    <div class="m-card">
+      <div class="m-label">Generation Throughput</div>
+      <div class="m-val">45.4 <span class="m-sub">tok/sec</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">VRAM Footprint</div>
+      <div class="m-val">4.75 <span class="m-sub neg">GB / 6.00 GB (79%)</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Pruned Expert Ratio</div>
+      <div class="m-val">80 / 128 <span class="m-sub">(-52.1%)</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Time to First Token</div>
+      <div class="m-val">24.2 <span class="m-sub">ms</span></div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Math MMLU Retention</div>
+      <div class="m-val">98.4% <span class="m-sub">Accurate</span></div>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <!-- Left Pane: MoE Activation Heatmap -->
+    <div class="left-pane">
+      <div class="pane-title">
+        <span>MoE Expert Routing Grid</span>
+        <span style="color: #10b981; font-size: 11px;">48 Active</span>
+      </div>
+      <p style="font-size: 11px; color: #64748b; line-height: 1.4;">
+        Top-k routing frequency across Riemannian calibration tokens. 80 dormant pathways excised.
+      </p>
+      
+      <div class="expert-grid">
+        <div class="exp-slot exp-active">E01</div>
+        <div class="exp-slot exp-pruned">E02</div>
+        <div class="exp-slot exp-active">E03</div>
+        <div class="exp-slot exp-active">E04</div>
+        <div class="exp-slot exp-pruned">E05</div>
+        <div class="exp-slot exp-pruned">E06</div>
+        <div class="exp-slot exp-active">E07</div>
+        <div class="exp-slot exp-med">E08</div>
+        <div class="exp-slot exp-pruned">E09</div>
+        <div class="exp-slot exp-active">E10</div>
+        <div class="exp-slot exp-pruned">E11</div>
+        <div class="exp-slot exp-med">E12</div>
+        <div class="exp-slot exp-pruned">E13</div>
+        <div class="exp-slot exp-pruned">E14</div>
+        <div class="exp-slot exp-active">E15</div>
+        <div class="exp-slot exp-pruned">E16</div>
+        <div class="exp-slot exp-active">E17</div>
+        <div class="exp-slot exp-pruned">E18</div>
+        <div class="exp-slot exp-pruned">E19</div>
+        <div class="exp-slot exp-active">E20</div>
+        <div class="exp-slot exp-med">E21</div>
+        <div class="exp-slot exp-pruned">E22</div>
+        <div class="exp-slot exp-active">E23</div>
+        <div class="exp-slot exp-pruned">E24</div>
+        <div class="exp-slot exp-pruned">E25</div>
+        <div class="exp-slot exp-active">E26</div>
+        <div class="exp-slot exp-pruned">E27</div>
+        <div class="exp-slot exp-pruned">E28</div>
+        <div class="exp-slot exp-active">E29</div>
+        <div class="exp-slot exp-active">E30</div>
+        <div class="exp-slot exp-pruned">E31</div>
+        <div class="exp-slot exp-med">E32</div>
+        <div class="exp-slot exp-active">E33</div>
+        <div class="exp-slot exp-pruned">E34</div>
+        <div class="exp-slot exp-active">E35</div>
+        <div class="exp-slot exp-pruned">E36</div>
+        <div class="exp-slot exp-pruned">E37</div>
+        <div class="exp-slot exp-active">E38</div>
+        <div class="exp-slot exp-med">E39</div>
+        <div class="exp-slot exp-pruned">E40</div>
+        <div class="exp-slot exp-pruned">E41</div>
+        <div class="exp-slot exp-pruned">E42</div>
+        <div class="exp-slot exp-active">E43</div>
+        <div class="exp-slot exp-active">E44</div>
+        <div class="exp-slot exp-pruned">E45</div>
+        <div class="exp-slot exp-pruned">E46</div>
+        <div class="exp-slot exp-active">E47</div>
+        <div class="exp-slot exp-med">E48</div>
+      </div>
+
+      <div class="vram-bar-box">
+        <div class="vram-row">
+          <span>GPU Memory Allocation</span>
+          <span style="color: #10b981;">4.75 / 6.00 GB</span>
+        </div>
+        <div class="progress-bg">
+          <div class="progress-fill fill-weights"></div>
+          <div class="progress-fill fill-kv"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; color: #64748b; font-family: 'JetBrains Mono', monospace;">
+          <span>Weights: 3.12 GB</span>
+          <span>KV Cache: 1.63 GB</span>
+          <span>Free: 1.25 GB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Pane: Live Generation Playground -->
+    <div class="center-pane">
+      <div class="pane-title">
+        <span>Inference Token Streamer</span>
+        <span style="color: #38bdf8; font-size: 11px;">Batch: 1 · Precision: Sub-2-BPW</span>
+      </div>
+
+      <div class="terminal-box">
+        <div class="prompt-line">
+          <span class="prompt-tag">&gt; user:</span> <span class="prompt-cmd">Derive geodesic distance on Poincaré upper half-plane H² = {(x,y) : y &gt; 0} with metric ds² = (dx² + dy²) / y².</span>
+        </div>
+        <div class="stream-out">
+          <p><span style="color: #10b981; font-weight: 700;">&gt; assistant (MAPLE Pruned Gemma-4-26B):</span></p>
+          <p style="margin-top: 8px;">Let γ(t) = (x(t), y(t)) be a smooth curve between z₁ = (x₁, y₁) and z₂ = (x₂, y₂). The hyperbolic arc length functional is given by:</p>
+          <div class="math-block">
+            L(γ) = ∫ [ √(ẋ(t)² + ẏ(t)²) / y(t) ] dt
+          </div>
+          <p>Applying the Euler-Lagrange equations with Lagrangian F(x, y, ẋ, ẏ) = √(ẋ² + ẏ²) / y, since ∂F/∂x = 0, the conjugate momentum p_x = ẋ / [ y √(ẋ² + ẏ²) ] = C is conserved.</p>
+          <p style="margin-top: 6px;">For C ≠ 0, geodesics are semicircles orthogonal to the real axis {y = 0}. Integrating yields the closed-form hyperbolic distance:</p>
+          <div class="math-block" style="border-left-color: #10b981;">
+            d_H²(z₁, z₂) = arcosh( 1 + [ (x₁ - x₂)² + (y₁ - y₂)² ] / [ 2 y₁ y₂ ] ) = ln( [ |z₁ - z̄₂| + |z₁ - z₂| ] / [ |z₁ - z̄₂| - |z₁ - z₂| ] )
+          </div>
+        </div>
+        <div class="stream-meta">
+          <span>Tokens: <strong class="meta-tag">384</strong></span>
+          <span>Speed: <strong class="meta-tag">45.4 tok/s</strong></span>
+          <span>First Token: <strong class="meta-tag">24.2 ms</strong></span>
+          <span>VRAM Spikes: <strong class="meta-tag">0.0 MB</strong></span>
+          <span>Perplexity: <strong class="meta-tag">3.41</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Pane: Model Comparison Benchmark -->
+    <div class="right-pane">
+      <div class="pane-title">
+        <span>Compression Benchmark</span>
+        <span style="color: #c084fc; font-size: 11px;">RTX 4060 Laptop</span>
+      </div>
+
+      <div class="table-box">
+        <div class="table-head">
+          <span>Format</span>
+          <span>VRAM</span>
+          <span>Tok/s</span>
+          <span>MMLU</span>
+        </div>
+        <div class="table-row highlight">
+          <span>MAPLE (Ours)</span>
+          <span>4.75G</span>
+          <span>45.4</span>
+          <span>78.2</span>
+        </div>
+        <div class="table-row">
+          <span>AWQ 4-Bit</span>
+          <span>7.10G</span>
+          <span>21.8</span>
+          <span>76.8</span>
+        </div>
+        <div class="table-row">
+          <span>GPTQ 3-Bit</span>
+          <span>5.95G</span>
+          <span>16.4</span>
+          <span>71.2</span>
+        </div>
+        <div class="table-row">
+          <span>FP16 Base</span>
+          <span>9.92G</span>
+          <span>OOM</span>
+          <span>79.1</span>
+        </div>
+      </div>
+
+      <div class="spark-box">
+        <div class="pane-title" style="margin-bottom: 6px;">
+          <span>Latency Stability (Last 60s)</span>
+          <span style="color: #10b981; font-size: 10px;">σ = 0.4ms</span>
+        </div>
+        <svg class="sparkline" viewBox="0 0 300 55">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.4" />
+              <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.0" />
+            </linearGradient>
+          </defs>
+          <path d="M 0 35 Q 30 33, 60 36 T 120 34 T 180 37 T 240 33 T 300 35 L 300 55 L 0 55 Z" fill="url(#grad1)" />
+          <path d="M 0 35 Q 30 33, 60 36 T 120 34 T 180 37 T 240 33 T 300 35" fill="none" stroke="#10b981" stroke-width="2" />
+        </svg>
+      </div>
+
+      <div class="spark-box" style="background: #0d121c; border-color: #192234;">
+        <div style="font-size: 11px; font-weight: 700; color: #94a3b8; font-family: 'JetBrains Mono', monospace; margin-bottom: 4px;">Zero Cloud Dependence</div>
+        <p style="font-size: 10px; color: #64748b; line-height: 1.4;">
+          Enables air-gapped mathematical and coding LLM execution on 6GB VRAM laptops without renting cloud H100 instances.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -108,7 +108,8 @@
       "watchers": 5,
       "branch": "main",
       "shots": [
-        "shots/maple.svg"
+        "shots/maple.png",
+        "shots/maple-2.png"
       ],
       "stack": [
         "Python",
@@ -135,7 +136,7 @@
       "watchers": 2,
       "branch": "main",
       "shots": [
-        "shots/voxelnav.svg"
+        "shots/voxelnav.png"
       ],
       "stack": [
         "C++",
@@ -161,7 +162,7 @@
       "watchers": 1,
       "branch": "main",
       "shots": [
-        "shots/decision-engine.svg"
+        "shots/decision-engine.png"
       ],
       "stack": [
         "Python",
@@ -187,7 +188,7 @@
       "watchers": 1,
       "branch": "main",
       "shots": [
-        "shots/latency-engine.svg"
+        "shots/latency-engine.png"
       ],
       "stack": [
         "C++20",
@@ -213,7 +214,7 @@
       "watchers": 1,
       "branch": "main",
       "shots": [
-        "shots/ghostpilot.svg"
+        "shots/ghostpilot.png"
       ],
       "stack": [
         "Python",
@@ -239,7 +240,7 @@
       "watchers": 1,
       "branch": "main",
       "shots": [
-        "shots/kvquant.svg"
+        "shots/kvquant.png"
       ],
       "stack": [
         "Python",
@@ -736,7 +737,7 @@
       "watchers": 1,
       "branch": "main",
       "shots": [
-        "shots/latency-engine.svg"
+        "shots/latency-engine.png"
       ],
       "stack": [
         "Python",
@@ -762,7 +763,7 @@
       "watchers": 1,
       "branch": "main",
       "shots": [
-        "shots/decision-engine.svg"
+        "shots/decision-engine.png"
       ],
       "stack": [
         "TypeScript",
