@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aman Sachan (AmSach) | Systems Researcher &amp; Data Strategist</title>
+  <meta name="description" content="Aman Sachan (AmSach) - Independent systems researcher working on edge AI, MoE model compression (MAPLE), C++ engines, and econometric decision systems.">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./glimpse.css">
+</head>
+<body>
+  <div class="noise-layer" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Animated Code Wall -->
+  <div id="code-wall" class="code-wall" aria-hidden="true"></div>
+
+  <!-- Floating Dynamic Island Nav -->
+  <header class="floating-nav-wrap">
+    <nav class="floating-nav" aria-label="Primary navigation">
+      <a href="./" class="brand-pill">
+        <span class="status-dot"></span>
+        <span>AmSach</span>
+      </a>
+      <span class="nav-divider"></span>
+      <a href="./site/" class="nav-link">Portfolio</a>
+      <a href="./site/#projects" class="nav-link">Projects</a>
+      <a href="./site/#experience" class="nav-link">Work</a>
+      <a href="./site/#links" class="nav-link">Links</a>
+      <span class="nav-divider"></span>
+      <button id="theme-cycle-btn" class="theme-pill" type="button" title="Switch theme (:theme)">
+        <span class="theme-swatch" id="theme-swatch"></span>
+        <span id="theme-label">blackmoney</span>
+        <kbd>:t</kbd>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Center Hero Stage -->
+  <main class="hero-stage">
+    <div class="hero-card">
+      <div class="hero-top-row">
+        <div class="live-chip">
+          <span class="ping-wrap">
+            <span class="ping-ring"></span>
+            <span class="ping-core"></span>
+          </span>
+          <span>IIFT Kakinada &middot; Edge AI &amp; Quantitative Strategy</span>
+        </div>
+        <div class="kbd-hint">
+          <span>Enter buffer</span>
+          <kbd>Enter</kbd>
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        Aman Sachan
+        <span class="hero-handle">/ AmSach</span>
+      </h1>
+
+      <p class="hero-tagline">
+        Independent systems researcher building sub-2-BPW MoE pruning (MAPLE), real-time ROS2 robotics, C++20 engines, and causal econometric decision architectures.
+      </p>
+
+      <div class="hero-metrics">
+        <div class="metric-pill">
+          <span class="metric-val">65★</span>
+          <span class="metric-lbl">MAPLE MoE</span>
+        </div>
+        <div class="metric-pill">
+          <span class="metric-val">26★</span>
+          <span class="metric-lbl">VoxelNav ROS2</span>
+        </div>
+        <div class="metric-pill">
+          <span class="metric-val">371</span>
+          <span class="metric-lbl">GitHub Repos</span>
+        </div>
+        <div class="metric-pill">
+          <span class="metric-val">4x</span>
+          <span class="metric-lbl">IIM/IIT Finals</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="./site/" class="btn-primary">
+          <span>Open Neovim Portfolio</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="https://github.com/AmSach" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <span>github.com/AmSach</span>
+        </a>
+        <a href="https://www.linkedin.com/in/theamansachan" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/i.amsach" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <span>@i.amsach</span>
+        </a>
+      </div>
+
+      <!-- Neovim Command Bar -->
+      <form id="cmd-form" class="nvim-cmd-bar" autocomplete="off">
+        <span class="cmd-mode">NORMAL</span>
+        <span class="cmd-colon">:</span>
+        <input id="cmd-input" type="text" placeholder="type :open, :theme blackmoney, :theme paper, :projects, :links ..." aria-label="Neovim command input">
+        <div class="cmd-shortcuts">
+          <kbd>:</kbd>
+          <kbd>Enter</kbd>
+        </div>
+      </form>
+      <div id="cmd-feedback" class="cmd-feedback" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <script src="./glimpse.js" type="module"></script>
+</body>
+</html>

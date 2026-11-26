@@ -1,0 +1,223 @@
+{
+  "identity": {
+    "name": "Aman Sachan",
+    "handle": "AmSach",
+    "barTitle": "amsach.dev - nvim",
+    "terminalUser": "amsach@iift",
+    "domain": "amsach.dev",
+    "tagline": "Independent Systems Researcher & Data Strategist. Edge AI, MoE Pruning, C++ Engines, and Econometric Decision Systems.",
+    "github": "AmSach",
+    "storagePrefix": "amsach_portfolio_"
+  },
+  "about": {
+    "bio": [
+      "Independent systems researcher and BBA (Business Analytics) scholar at IIFT Kakinada (2026-2029), working at the intersection of edge AI, model compression, local inference infrastructure, and quantitative business strategy.",
+      "Creator of MAPLE (Manifold-Activated Pruning of Latent Experts), compressing Gemma 4 26B from 9.92 GB to 4.75 GB (1.48 BPW) for 100% in-VRAM execution on 6GB laptop GPUs at 45.4 tok/s. Upstream contributor to tensorflow/tensorflow and microsoft/vscode."
+    ],
+    "extra": [
+      "Outside systems engineering, I serve as Junior Consultant at 180 Degrees Consulting (IIFT Kakinada), lead an independent robotics team across 20+ hackathons (IIT Bombay Techfest Runner-up, IIT Kanpur Techkriti 2nd Runner-up, ISRO Antariksh Top-50), and compete in national B-school case finals (IIM Bangalore, IIM Indore, IIT Delhi).",
+      "Endurance runner (Daudo Bharat 10km Semi-Marathon Silver Medalist, 52 mins), high-altitude trekker, and 17x MUNer (8 Best Delegate awards)."
+    ]
+  },
+  "links": [
+    { "label": "GitHub", "value": "github.com/AmSach", "url": "https://github.com/AmSach" },
+    { "label": "LinkedIn", "value": "linkedin.com/in/theamansachan", "url": "https://www.linkedin.com/in/theamansachan" },
+    { "label": "Instagram", "value": "@i.amsach", "url": "https://www.instagram.com/i.amsach" },
+    { "label": "HuggingFace", "value": "huggingface.co/AmSach", "url": "https://huggingface.co/AmSach" },
+    { "label": "Scholar", "value": "Google Scholar", "url": "https://scholar.google.com/citations?user=dfgiWLYAAAAJ&hl=en" },
+    { "label": "Kaggle", "value": "kaggle.com/amansachan", "url": "https://kaggle.com/amansachan" },
+    { "label": "Zenodo", "value": "DOI 10.5281/zenodo.24042480", "url": "https://doi.org/10.5281/zenodo.24042480" },
+    { "label": "Email", "value": "amansachan92905@gmail.com", "url": "mailto:amansachan92905@gmail.com" },
+    { "label": "IIFT Email", "value": "aman_ipm26@iift.edu", "url": "mailto:aman_ipm26@iift.edu" }
+  ],
+  "work": [
+    {
+      "role": "Junior Consultant, Strategy & Operations",
+      "org": "180 Degrees Consulting (IIFT Kakinada Chapter)",
+      "period": "2026 - Present",
+      "highlights": [
+        "Conducting structured consulting engagements focused on operational diagnostics, market feasibility, and business unit economics.",
+        "Writing custom Python scripts to scrape market data, clean datasets, and accelerate client research workflows."
+      ]
+    },
+    {
+      "role": "Operations & Product Intern",
+      "org": "ExcelAit Pvt. Ltd.",
+      "period": "2025 - 2026",
+      "highlights": [
+        "Built Python prototypes to automatically scale question difficulty and process content, reducing manual task time by 40%.",
+        "Maintained partner outreach tracking sheets and milestone trackers across institutional collaborations."
+      ]
+    },
+    {
+      "role": "Workflow & Operations Lead",
+      "org": "Premiere WorX",
+      "period": "2024 - 2025",
+      "highlights": [
+        "Managed project turnaround schedules and delivery checks across 14 international video editing deliverables with a team of 4."
+      ]
+    },
+    {
+      "role": "Team Leader & Hardware Head",
+      "org": "Independent Robotics Team",
+      "period": "2023 - Present",
+      "highlights": [
+        "Led team across 20+ hackathons; managed parts inventory, component costs, and hardware builds (6x6 ground rover, document scanner).",
+        "IIT Bombay Techfest Runner-up, IIT Kanpur Techkriti 2nd Runner-up, IIM Indore Epinoia Finalist, ISRO Bharatiya Antariksh Top-50."
+      ]
+    },
+    {
+      "role": "Junior Travel & Logistics Coordinator",
+      "org": "IIFT Kakinada (Batch Administration & Affairs)",
+      "period": "2026 - Present",
+      "highlights": [
+        "Manage travel schedules, vendor bus booking, and seat allocation for 60+ batch students across institutional visits."
+      ]
+    },
+    {
+      "role": "Head Boy | House Captain | Prefect",
+      "org": "Dr. Virendra Swarup Education Center",
+      "period": "2023 - 2026",
+      "highlights": [
+        "Head Boy (2025-26): Managed prefect council, school assemblies, and student-faculty communication.",
+        "House Captain (2024-25): Led house of 150+ students across sports and inter-school academic competitions."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BBA (Business Analytics) - Operations, Corporate Strategy & Data Systems",
+      "institution": "Indian Institute of Foreign Trade (IIFT), Kakinada",
+      "period": "2026 - 2029"
+    },
+    {
+      "degree": "Class XII (CBSE)",
+      "institution": "Dr. Virendra Swarup Education Center",
+      "period": "2026"
+    },
+    {
+      "degree": "Class X (CBSE)",
+      "institution": "Dr. Virendra Swarup Education Center",
+      "period": "2024"
+    }
+  ],
+  "projects": [
+    {
+      "name": "maple",
+      "tagline": "Manifold-Activated Pruning of Latent Experts for Sub-2-BPW MoE LLMs",
+      "stack": ["Python", "PyTorch", "GGUF", "MoE", "CUDA"],
+      "stars": 65,
+      "forks": 5,
+      "metrics": "Gemma 4 26B: 9.92 GB -> 4.75 GB (1.48 BPW) | 45.4 tok/s on 6GB GPU | 300+ HF downloads in 24h",
+      "url": "https://github.com/AmSach/maple",
+      "demo": "https://amsach.github.io/maple/",
+      "more": false
+    },
+    {
+      "name": "voxelnav",
+      "tagline": "Real-time semantic voxel mapping for ROS2 robots (<100ms latency on Jetson Nano)",
+      "stack": ["C++", "ROS2", "Jetson Nano", "3D Mapping"],
+      "stars": 26,
+      "forks": 1,
+      "metrics": "Sub-100ms semantic voxel updates on edge robotics hardware",
+      "url": "https://github.com/AmSach/voxelnav",
+      "more": false
+    },
+    {
+      "name": "decision-analytics-engine",
+      "tagline": "Production B-School Data Analytics & Econometric Decision Engine",
+      "stack": ["Python", "Double ML", "Level-k / QRE", "PostgreSQL", "DuckDB"],
+      "stars": 0,
+      "metrics": "Causal price elasticity, CLV (BG/NBD), survival analysis & spectral hypergraph attribution on 50,000+ transactions",
+      "url": "https://github.com/AmSach/decision-analytics-engine",
+      "more": false
+    },
+    {
+      "name": "latency-engine",
+      "tagline": "Sub-Millisecond C++20 & Async Python HFT Statistical Arbitrage Engine",
+      "stack": ["C++20", "Async Python", "Order Book", "StatArb"],
+      "stars": 0,
+      "metrics": "Cross-exchange spread & delta-neutral funding rate arbitrage pipeline",
+      "url": "https://github.com/AmSach/latency-engine",
+      "more": false
+    },
+    {
+      "name": "GhostPilot",
+      "tagline": "GPS-Denied Drone Navigation with Agentic AI (VINS-Mono + Nav2 + LLM)",
+      "stack": ["Python", "VINS-Mono", "Nav2", "ROS2"],
+      "stars": 6,
+      "forks": 2,
+      "metrics": "Autonomous visual-inertial navigation with natural language mission parsing",
+      "url": "https://github.com/AmSach/GhostPilot",
+      "more": false
+    },
+    {
+      "name": "kvquant",
+      "tagline": "Drop-in KV cache compressor for local LLM inference (70B on 8GB RAM)",
+      "stack": ["Python", "Quantization", "LLM Inference"],
+      "stars": 7,
+      "metrics": "Memory-bounded KV cache compression for consumer hardware",
+      "url": "https://github.com/AmSach/kvquant",
+      "more": false
+    },
+    {
+      "name": "middleout-lattice",
+      "tagline": "Multi-Scale Context-Predictive Range Coder (MS-CPRC) beating Zstd L22 & Brotli L11",
+      "stack": ["C++", "Compression", "Entropy Coding"],
+      "stars": 1,
+      "metrics": "High-performance lossless compression engine",
+      "url": "https://github.com/AmSach/middleout-lattice",
+      "more": true
+    },
+    {
+      "name": "ComputePool-Grid",
+      "tagline": "Orchestration layer and spot-pricing marketplace for decentralized compute",
+      "stack": ["Next.js", "FastAPI", "Distributed Systems"],
+      "stars": 0,
+      "url": "https://github.com/AmSach/ComputePool-Grid",
+      "more": true
+    },
+    {
+      "name": "bitforge",
+      "tagline": "Auto-compress language models for microcontrollers",
+      "stack": ["Python", "Edge AI", "MCU"],
+      "stars": 2,
+      "url": "https://github.com/AmSach/bitforge",
+      "more": true
+    },
+    {
+      "name": "kernelweave",
+      "tagline": "Self-compiling skill kernels for LLMs",
+      "stack": ["Python", "Agents", "Compilers"],
+      "stars": 1,
+      "url": "https://github.com/AmSach/kernelweave",
+      "more": true
+    },
+    {
+      "name": "stegachirp",
+      "tagline": "Ultrasonic FSK steganography for WAV files in pure Python",
+      "stack": ["Python", "DSP", "Audio"],
+      "stars": 3,
+      "url": "https://github.com/AmSach/stegachirp",
+      "more": true
+    },
+    {
+      "name": "SignalHop",
+      "tagline": "Low-latency signal routing and telemetry",
+      "stack": ["Python"],
+      "stars": 1,
+      "url": "https://github.com/AmSach/SignalHop",
+      "more": true
+    }
+  ],
+  "competitions": [
+    { "event": "IIM Bangalore Founder's Dilemma", "result": "National Finalist", "year": "2026", "focus": "Venture trade-offs, CAC/LTV/Payback, market expansion" },
+    { "event": "IIM Bangalore Crown Jewel", "result": "National Finalist", "year": "2026", "focus": "Corporate cost structures, balance sheet health, downside risk" },
+    { "event": "IIM Indore Enigma", "result": "National Finalist", "year": "2026", "focus": "Business models, revenue projections, operational rollout" },
+    { "event": "IIT Delhi Stratagize", "result": "National Finalist", "year": "2026", "focus": "Supply chain distribution & channel logistics" },
+    { "event": "IIT Bombay Techfest", "result": "Runner-up", "year": "2025", "focus": "Robotics & autonomous hardware build" },
+    { "event": "IIT Kanpur Techkriti", "result": "2nd Runner-up", "year": "2025", "focus": "Hardware engineering & systems" },
+    { "event": "ISRO Bharatiya Antariksh Hackathon", "result": "Top-50 National Finalist", "year": "2026", "focus": "Space-tech & autonomous navigation" },
+    { "event": "India Innovates 2026", "result": "National Finalist", "year": "2026", "focus": "Applied engineering & systems" }
+  ]
+}

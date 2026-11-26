@@ -1,0 +1,22 @@
+{
+  "username": "AmSach",
+  "repos": 371,
+  "stars": 118,
+  "followers": 4,
+  "organizations": ["tensorflow", "inference-gateway", "openags"],
+  "languages": [
+    { "name": "Python", "pct": 64.2, "color": "#3572A5" },
+    { "name": "C++", "pct": 21.8, "color": "#f34b7d" },
+    { "name": "SQL", "pct": 7.4, "color": "#e38c00" },
+    { "name": "JavaScript", "pct": 4.5, "color": "#f1e05a" },
+    { "name": "HTML/CSS", "pct": 2.1, "color": "#e34c26" }
+  ],
+  "highlights": [
+    { "repo": "maple", "stars": 65, "lang": "Python", "note": "Sub-2-BPW MoE LLM Pruning" },
+    { "repo": "voxelnav", "stars": 26, "lang": "C++", "note": "ROS2 Semantic Voxel Mapping" },
+    { "repo": "kvquant", "stars": 7, "lang": "Python", "note": "70B KV Cache Compressor" },
+    { "repo": "GhostPilot", "stars": 6, "lang": "Python", "note": "GPS-Denied Drone Navigation" },
+    { "repo": "stegachirp", "stars": 3, "lang": "Python", "note": "Ultrasonic FSK Steganography" },
+    { "repo": "bitforge", "stars": 2, "lang": "Python", "note": "LLM Compression for MCUs" }
+  ]
+}

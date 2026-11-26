@@ -1,0 +1,62 @@
+{
+  "snippets": [
+    {
+      "file": "maple/prune_experts.py",
+      "lang": "python",
+      "lines": [
+        "# MAPLE: Manifold-Activated Pruning of Latent Experts",
+        "def prune_moe_layer(experts, activation_manifold, target_bpw=1.48):",
+        "    scores = compute_manifold_salience(experts, activation_manifold)",
+        "    keep_mask = scores >= torch.quantile(scores, 1.0 - target_bpw / 4.0)",
+        "    # Gemma 4 26B: 9.92 GB -> 4.75 GB (45.4 tok/s on 6GB VRAM)",
+        "    return pack_gguf_sub2bpw(experts[keep_mask])"
+      ]
+    },
+    {
+      "file": "voxelnav/src/semantic_grid.cpp",
+      "lang": "cpp",
+      "lines": [
+        "// ROS2 Real-time Semantic Voxel Mapping (<100ms on Jetson Nano)",
+        "void SemanticGrid::integrate_scan(const PointCloud& cloud, const Pose3d& T) {",
+        "  for (const auto& pt : cloud.points) {",
+        "    const VoxelKey key = quantize(T * pt.xyz, resolution_m_);",
+        "    voxels_[key].update_bayesian(pt.semantic_id, pt.confidence);",
+        "  }",
+        "}"
+      ]
+    },
+    {
+      "file": "decision-analytics-engine/dml_elasticity.py",
+      "lang": "python",
+      "lines": [
+        "# Double/Debiased ML for Causal Price Elasticity",
+        "theta_hat = dml_crossfit(",
+        "    Y=log_quantity, D=log_price, X=controls,",
+        "    n_folds=5, model_y=LightGBMRegressor(), model_d=LightGBMRegressor()",
+        ")",
+        "eq_prices = solve_level_k_qre(theta_hat, marginal_cost, lambda_rationality=2.4)"
+      ]
+    },
+    {
+      "file": "latency-engine/orderbook_arb.hpp",
+      "lang": "cpp",
+      "lines": [
+        "// C++20 Lock-Free Cross-Exchange Spread Monitor",
+        "inline bool check_stat_arb(const BookTop& a, const BookTop& b, double bps_thresh) {",
+        "  const double spread_bps = (b.bid - a.ask) / a.ask * 10000.0;",
+        "  return spread_bps > bps_thresh;",
+        "}"
+      ]
+    },
+    {
+      "file": "middleout-lattice/ms_cprc.cpp",
+      "lang": "cpp",
+      "lines": [
+        "// Multi-Scale Context-Predictive Range Coder",
+        "size_t encode_lattice(Span<const uint8_t> in, Span<uint8_t> out) {",
+        "  return RangeCoder::compress(predict_context_residuals(in), out);",
+        "}"
+      ]
+    }
+  ]
+}

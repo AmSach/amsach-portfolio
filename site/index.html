@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>amsach.dev - nvim</title>
+  <meta name="description" content="Aman Sachan (AmSach) - Systems Researcher, Edge AI & MoE Compression, C++20 Engines, Quantitative Strategy.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./editor.css">
+</head>
+<body>
+  <div class="noise-layer" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Floating Dynamic Island Header -->
+  <header class="floating-nav-wrap">
+    <nav class="floating-nav" aria-label="Editor navigation">
+      <a href="../" class="brand-pill">
+        <span class="status-dot"></span>
+        <span>amsach@iift</span>
+      </a>
+      <span class="nav-divider"></span>
+      <a href="#about" class="nav-link">01.about</a>
+      <a href="#projects" class="nav-link">02.projects</a>
+      <a href="#experience" class="nav-link">03.work</a>
+      <a href="#competitions" class="nav-link">04.finals</a>
+      <a href="#links" class="nav-link">05.links</a>
+      <span class="nav-divider"></span>
+      <button id="theme-cycle-btn" class="theme-pill" type="button" title="Cycle theme (t or :theme)">
+        <span class="theme-swatch"></span>
+        <span id="theme-label">blackmoney</span>
+        <kbd>t</kbd>
+      </button>
+    </nav>
+  </header>
+
+  <main class="editor-shell">
+    <!-- Top Buffer Tab Bar -->
+    <div class="buffer-bar">
+      <div class="buffer-tabs">
+        <span class="buffer-tab active">README.md</span>
+        <span class="buffer-tab">maple.py</span>
+        <span class="buffer-tab">voxelnav.cpp</span>
+        <span class="buffer-tab">decision_engine.py</span>
+      </div>
+      <div class="buffer-meta">
+        <span>j/k scroll</span>
+        <kbd>:</kbd><span>cmd</span>
+        <kbd>t</kbd><span>theme</span>
+      </div>
+    </div>
+
+    <!-- Section 1: About / Hero -->
+    <section id="about" class="editor-section" data-section="about">
+      <div class="section-header">
+        <span class="ln">01</span>
+        <span class="sec-tag">BUFFER // IDENTITY &amp; RESEARCH</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="bento-card span-2">
+          <div class="card-glow"></div>
+          <div class="chip-row">
+            <span class="live-chip">
+              <span class="ping-core"></span>
+              <span>IIFT Kakinada &middot; BBA Business Analytics (2026-2029)</span>
+            </span>
+            <span class="mono-badge">371 repos &middot; 118+ stars</span>
+          </div>
+          <h1 class="hero-name">Aman Sachan <span class="handle">(@AmSach)</span></h1>
+          <div id="bio-container" class="bio-copy"></div>
+          <div class="hero-cta-row">
+            <a href="https://github.com/AmSach" target="_blank" rel="noopener noreferrer" class="btn-primary">GitHub (AmSach)</a>
+            <a href="https://www.linkedin.com/in/theamansachan" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+            <a href="https://www.instagram.com/i.amsach" target="_blank" rel="noopener noreferrer" class="btn-secondary">Instagram (@i.amsach)</a>
+            <a href="https://huggingface.co/AmSach" target="_blank" rel="noopener noreferrer" class="btn-secondary">HuggingFace</a>
+          </div>
+        </div>
+
+        <div class="bento-card">
+          <div class="sec-subhead">GITHUB SNAPSHOT</div>
+          <div id="lang-bars" class="lang-bars"></div>
+          <div class="org-row">
+            <span class="org-label">ORGS</span>
+            <span class="mono-pill">@tensorflow</span>
+            <span class="mono-pill">@inference-gateway</span>
+            <span class="mono-pill">@openags</span>
+          </div>
+          <div class="upstream-box">
+            <div class="upstream-title">Upstream Merged PRs</div>
+            <div class="upstream-item">tensorflow/tensorflow</div>
+            <div class="upstream-item">microsoft/vscode</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Code Preview Switcher -->
+    <section class="editor-section" data-section="telemetry">
+      <div class="preview-window">
+        <div class="preview-header">
+          <div class="window-dots">
+            <span></span><span></span><span></span>
+            <span id="preview-filename" class="preview-file">maple/prune_experts.py</span>
+          </div>
+          <div class="preview-tabs" role="tablist">
+            <button class="preview-tab active" data-tab="maple" type="button">MAPLE MoE</button>
+            <button class="preview-tab" data-tab="voxelnav" type="button">VoxelNav ROS2</button>
+            <button class="preview-tab" data-tab="dml" type="button">Decision Engine</button>
+          </div>
+        </div>
+        <pre class="preview-code"><code id="preview-code-body"></code></pre>
+      </div>
+    </section>
+
+    <!-- Section 3: Projects Bento -->
+    <section id="projects" class="editor-section" data-section="projects">
+      <div class="section-header">
+        <span class="ln">02</span>
+        <span class="sec-tag">PROJECTS // FLAGSHIP SYSTEMS</span>
+      </div>
+      <div id="projects-grid" class="projects-grid"></div>
+
+      <div class="more-toggle-wrap">
+        <button id="toggle-more-btn" class="btn-secondary" type="button">
+          <span>ls more/ (6 additional engines)</span>
+        </button>
+      </div>
+      <div id="more-projects-grid" class="projects-grid hidden"></div>
+    </section>
+
+    <!-- Section 4: Work Experience & Consulting -->
+    <section id="experience" class="editor-section" data-section="experience">
+      <div class="section-header">
+        <span class="ln">03</span>
+        <span class="sec-tag">WORK // CONSULTING, OPS &amp; LEADERSHIP</span>
+      </div>
+      <div id="work-list" class="work-list"></div>
+    </section>
+
+    <!-- Section 5: Competitions, Education & Athletics -->
+    <section id="competitions" class="editor-section" data-section="competitions">
+      <div class="section-header">
+        <span class="ln">04</span>
+        <span class="sec-tag">FINALS // CASE COMPS, ROBOTICS &amp; EDUCATION</span>
+      </div>
+      <div id="comp-grid" class="comp-grid"></div>
+      <div id="edu-grid" class="edu-grid"></div>
+    </section>
+
+    <!-- Section 6: Monumental Footer & Links -->
+    <footer id="links" class="monumental-footer" data-section="links">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-col-title">CODE &amp; RESEARCH</h4>
+          <ul id="links-code" class="footer-links"></ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">SOCIAL &amp; DIRECT</h4>
+          <ul id="links-social" class="footer-links"></ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">ATHLETICS &amp; SPEAKING</h4>
+          <p class="footer-note">
+            Daudo Bharat 10km Semi-Marathon Silver Medalist (52 mins). High-altitude trekking &amp; long-distance running.
+            17 Model United Nations conferences (8 Best Delegate awards). Finalist at Indian Startup School &amp; Tetr School of Business.
+          </p>
+        </div>
+      </div>
+
+      <div class="monogram-wrap">
+        <span class="monogram">AMSACH</span>
+        <div class="footer-bottom">
+          <span>AMAN SACHAN &middot; IIFT KAKINADA &middot; INDIA</span>
+          <span>NEOVIM PORTFOLIO &middot; PRESS : FOR COMMANDS</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Fixed Neovim Statusline -->
+  <div class="statusline-wrap">
+    <form id="nvim-cmd-form" class="statusline" autocomplete="off">
+      <span class="stl-mode">NORMAL</span>
+      <span class="stl-branch">main</span>
+      <span class="stl-colon">:</span>
+      <input id="nvim-cmd-input" type="text" placeholder="type :theme paper, :theme tokyonight, :projects, :home ..." aria-label="Neovim statusline command">
+      <span id="stl-msg" class="stl-msg">utf-8 | unix</span>
+    </form>
+  </div>
+
+  <script src="./editor.js" type="module"></script>
+</body>
+</html>
