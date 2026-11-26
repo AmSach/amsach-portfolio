@@ -682,7 +682,7 @@ function finishBoot() {
 }
 
 function renderWall() {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
   const width = wallCanvas.clientWidth;
   const height = wallCanvas.clientHeight;
   wallCanvas.width = Math.round(width * dpr);
@@ -1720,7 +1720,7 @@ function planFace() {
 function startBlock(at) {
   if (leaving || !face || !at || tile || block) return false;
   const now = performance.now();
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
   block = { at, dpr, scene: makeTracking(at.w, at.h), start: now, last: now, grow: spring(0, 0.6, 1), phase: "seed", holdUntil: 0, holdMs: FACE_HOLD_MS };
   seedLine(at.seed, at.col, at.col + at.cols);
   showMachine(block);
@@ -1848,7 +1848,7 @@ function codeSource(files) {
 }
 
 function makeCodifier(w, h, tone) {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
   const px = face?.track?.fontPx || FACE_FONT_PX; // figure mode (full-body portrait) needs finer glyphs than the 5.5px face
   const cw = px * 0.6;
   const ch = px * 1.08;

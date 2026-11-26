@@ -60,7 +60,7 @@ export function attachXray(frame, image) {
     if (!box.width || !box.height) return;
     const style = getComputedStyle(document.body);
     colors = { bg: style.getPropertyValue("--bg").trim() || "#020303", ink: rgbOf(style.getPropertyValue("--ink").trim()), accent: style.getPropertyValue("--accent").trim() || "#df6124" };
-    width = Math.min(1100, Math.round(box.width * Math.min(devicePixelRatio || 1, 2)));
+    width = Math.min(1100, Math.round(box.width * Math.min(devicePixelRatio || 1, 1.25)));
     height = Math.round(width / (box.width / box.height));
     canvas.width = edges.width = width;
     canvas.height = edges.height = height;

@@ -309,7 +309,7 @@ export function createBlueprint(host, { points = 0, from = "", to = "", owner = 
     W = r.width;
     H = r.height;
     if (!W || !H) return false;
-    dpr = Math.min(devicePixelRatio || 1, 2);
+    dpr = Math.min(devicePixelRatio || 1, 1.25);
     canvas.width = Math.round(W * dpr);
     canvas.height = Math.round(H * dpr);
     narrow = W < 440;

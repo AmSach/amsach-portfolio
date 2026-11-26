@@ -813,11 +813,7 @@ export function createWatch({ layer, deskHost, eyeHost, buffer, status, onState,
       last = 0;
       return;
     }
-    const dt = last ? clamp((now - last) / 1000, 0, 0.1) : 1 / 60;
-    if (last && now - last < 30 && desk.vis.value < 0.01) {
-      raf = requestAnimationFrame(tick);
-      return;
-    }
+    const dt = last ? clamp((now - last) / 1000, 0, 0.05) : 1 / 60;
     last = now;
     g.clearRect(0, 0, width, height);
     const box = eyeBox();

@@ -41,7 +41,7 @@ export async function loadJSON(url) {
 }
 
 export function fitCanvas(canvas) {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;
   canvas.width = Math.max(1, Math.round(width * dpr));

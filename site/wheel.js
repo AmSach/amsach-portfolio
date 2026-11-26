@@ -410,7 +410,7 @@ export function createWheel(host, { items, days, palettes = [], stack = null, wo
   }
 
   function sized(canvas) {
-    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const dpr = Math.min(devicePixelRatio || 1, 1.25);
     const cw = W + WHEEL.pad;
     const w = Math.round(cw * dpr);
     const h = Math.round(H * dpr);
