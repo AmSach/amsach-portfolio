@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="16" fill="#08080a"/>
-  <rect x="2" y="2" width="60" height="60" rx="14" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-  <path d="M18 46L30 18H35L47 46H41.4L38.6 39H26.4L23.6 46H18ZM28.2 34.4H36.8L32.5 23.6L28.2 34.4Z" fill="#d4af37"/>
-  <circle cx="49" cy="17" r="4" fill="#34d399"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -4 88 88"><title>amsach.github.io</title><style>path{fill:#0c0b0d}@media (prefers-color-scheme:dark){path{fill:#d8d1cc}}</style><path d="M8 16L36 40L8 64L18 74L54 40L18 6Z"/><path d="M52 62H84V74H52Z"/></svg>
