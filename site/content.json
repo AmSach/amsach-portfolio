@@ -1,6 +1,6 @@
 {
  "owner": "AmSach",
- "fetchedAt": "2026-11-26T17:33:34.319Z",
+ "fetchedAt": "2026-11-26T19:19:29.842Z",
  "about": {
   "repo": "AmSach",
   "lines": [
@@ -25,17 +25,17 @@
    "url": "https://github.com/AmSach/maple",
    "description": "Manifold-Activated Pruning of Latent Experts for Sub-2-BPW MoE LLMs. Compresses Gemma 4 26B from 9.92 GB to 4.75 GB (1.48 BPW) at 45.4 tok/s on 6GB GPUs.",
    "tag": "LLM Compression · Python",
-   "stars": 65,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-11-19",
-   "forks": 5,
-   "watchers": 0,
-   "issues": 0,
-   "license": "NOASSERTION",
-   "created": "2026-11-07",
-   "branch": "master",
-   "commits": 49,
-   "files": 29,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
+   "license": null,
+   "created": null,
+   "branch": "main",
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/maple",
    "stack": [
@@ -45,10 +45,24 @@
     "MoE",
     "CUDA"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/maple-architecture.png",
+     "source": "shots/maple-architecture.png",
+     "alt": "MAPLE screenshot 1",
+     "xray": false
+    },
+    {
+     "file": "shots/maple-latency.png",
+     "source": "shots/maple-latency.png",
+     "alt": "MAPLE screenshot 2",
+     "xray": false
+    }
+   ],
    "lines": [
     "# MAPLE",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Manifold-Activated Pruning of Latent Experts for Sub-2-BPW MoE LLMs. Compresses Gemma 4 26B from 9.92 GB to 4.75 GB (1.48 BPW) at 45.4 tok/s on 6GB GPUs.",
     "",
@@ -59,6 +73,8 @@
     "",
     "Built with Python · PyTorch · GGUF · MoE · CUDA",
     "",
+    "\u0001IMG1\u0001",
+    "",
     "[Visit](https://github.com/AmSach/maple)"
    ]
   },
@@ -67,17 +83,17 @@
    "url": "https://github.com/AmSach/voxelnav",
    "description": "Real-time semantic voxel mapping system for ROS2 robots with sub-100ms latency on Jetson Nano.",
    "tag": "Robotics · C++ / ROS2",
-   "stars": 26,
+   "stars": null,
    "language": "C++",
-   "pushed": "2026-07-14",
-   "forks": 1,
-   "watchers": 0,
-   "issues": 1,
-   "license": "MIT",
-   "created": "2026-04-30",
-   "branch": "master",
-   "commits": 7,
-   "files": 60,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
+   "license": null,
+   "created": null,
+   "branch": "main",
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/voxelnav",
    "stack": [
@@ -86,10 +102,18 @@
     "Jetson Nano",
     "3D Mapping"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/voxelnav-cli.svg",
+     "source": "shots/voxelnav-cli.svg",
+     "alt": "VoxelNav screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# VoxelNav",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Real-time semantic voxel mapping system for ROS2 robots with sub-100ms latency on Jetson Nano.",
     "",
@@ -107,17 +131,17 @@
    "url": "https://github.com/AmSach/decision-analytics-engine",
    "description": "Enterprise causal econometrics and ML decision architecture deploying Double/Debiased ML, Level-k/QRE pricing, and spectral hypergraph attribution.",
    "tag": "Econometrics · Python",
-   "stars": 0,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-11-21",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-11-08",
+   "created": null,
    "branch": "main",
-   "commits": 18,
-   "files": 105,
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/decision-analytics-engine",
    "stack": [
@@ -126,10 +150,24 @@
     "PostgreSQL",
     "DuckDB"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/decision-analytics.png",
+     "source": "shots/decision-analytics.png",
+     "alt": "Decision Analytics Engine screenshot 1",
+     "xray": false
+    },
+    {
+     "file": "shots/game-theory.png",
+     "source": "shots/game-theory.png",
+     "alt": "Decision Analytics Engine screenshot 2",
+     "xray": false
+    }
+   ],
    "lines": [
     "# Decision Analytics Engine",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Enterprise causal econometrics and ML decision architecture deploying Double/Debiased ML, Level-k/QRE pricing, and spectral hypergraph attribution.",
     "",
@@ -139,6 +177,8 @@
     "",
     "Built with Python · Double ML · PostgreSQL · DuckDB",
     "",
+    "\u0001IMG1\u0001",
+    "",
     "[Visit](https://github.com/AmSach/decision-analytics-engine)"
    ]
   },
@@ -147,17 +187,17 @@
    "url": "https://github.com/AmSach/latency-engine",
    "description": "Sub-millisecond C++20 and async Python HFT statistical arbitrage, cross-exchange spread, and delta-neutral funding engine.",
    "tag": "Quant Systems · C++20",
-   "stars": 0,
-   "language": "Python",
-   "pushed": "2026-09-21",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "stars": null,
+   "language": "C++20",
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-09-21",
+   "created": null,
    "branch": "main",
-   "commits": 7,
-   "files": 27,
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/latency-engine",
    "stack": [
@@ -165,10 +205,18 @@
     "Async Python",
     "Order Book"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/latency-cli.svg",
+     "source": "shots/latency-cli.svg",
+     "alt": "Latency Engine screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# Latency Engine",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Sub-millisecond C++20 and async Python HFT statistical arbitrage, cross-exchange spread, and delta-neutral funding engine.",
     "",
@@ -185,17 +233,17 @@
    "url": "https://github.com/AmSach/GhostPilot",
    "description": "GPS-denied drone navigation with Agentic AI combining VINS-Mono, Nav2, and an LLM mission parser.",
    "tag": "Autonomy · Python / ROS2",
-   "stars": 6,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-05-02",
-   "forks": 2,
-   "watchers": 1,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-04-30",
+   "created": null,
    "branch": "main",
-   "commits": 18,
-   "files": 49,
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/GhostPilot",
    "stack": [
@@ -204,10 +252,18 @@
     "Nav2",
     "ROS2"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/ghostpilot-cli.svg",
+     "source": "shots/ghostpilot-cli.svg",
+     "alt": "GhostPilot screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# GhostPilot",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### GPS-denied drone navigation with Agentic AI combining VINS-Mono, Nav2, and an LLM mission parser.",
     "",
@@ -224,17 +280,17 @@
    "url": "https://github.com/AmSach/kvquant",
    "description": "Drop-in KV cache compressor for local LLM inference, enabling 70B-class context scaling on 8GB RAM.",
    "tag": "Inference · Python",
-   "stars": 7,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-05-02",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-04-30",
-   "branch": "master",
-   "commits": 2,
-   "files": 16,
+   "created": null,
+   "branch": "main",
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/kvquant",
    "stack": [
@@ -242,10 +298,18 @@
     "Quantization",
     "LLM Inference"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/kvquant-cli.svg",
+     "source": "shots/kvquant-cli.svg",
+     "alt": "KVQuant screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# KVQuant",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Drop-in KV cache compressor for local LLM inference, enabling 70B-class context scaling on 8GB RAM.",
     "",
@@ -262,17 +326,17 @@
    "url": "https://github.com/AmSach/middleout-lattice",
    "description": "Multi-Scale Context-Predictive Range Coder (MS-CPRC) lossless compression engine beating Zstd L22 and Brotli L11.",
    "tag": "Compression · C++",
-   "stars": 1,
+   "stars": null,
    "language": "C++",
-   "pushed": "2026-10-06",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-09-21",
+   "created": null,
    "branch": "main",
-   "commits": 20,
-   "files": 850,
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/middleout-lattice",
    "stack": [
@@ -280,10 +344,18 @@
     "Compression",
     "Range Coding"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/project-1.svg",
+     "source": "shots/project-1.svg",
+     "alt": "Middleout Lattice screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# Middleout Lattice",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Multi-Scale Context-Predictive Range Coder (MS-CPRC) lossless compression engine beating Zstd L22 and Brotli L11.",
     "",
@@ -300,17 +372,17 @@
    "url": "https://github.com/AmSach/ComputePool-Grid",
    "description": "Orchestration layer and spot-pricing marketplace for decentralized compute resources.",
    "tag": "Distributed · Next.js / FastAPI",
-   "stars": 0,
-   "language": "Python",
-   "pushed": "2026-06-08",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "stars": null,
+   "language": "Next.js",
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-06-07",
-   "branch": "master",
-   "commits": 8,
-   "files": 52,
+   "created": null,
+   "branch": "main",
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/ComputePool-Grid",
    "stack": [
@@ -318,10 +390,18 @@
     "FastAPI",
     "Python"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/project-2.svg",
+     "source": "shots/project-2.svg",
+     "alt": "ComputePool Grid screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# ComputePool Grid",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Orchestration layer and spot-pricing marketplace for decentralized compute resources.",
     "",
@@ -337,17 +417,17 @@
    "url": "https://github.com/AmSach/bitforge",
    "description": "Auto-compress language models to fit on microcontrollers and pocket edge devices.",
    "tag": "Edge AI · Python",
-   "stars": 2,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-07-14",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-04-30",
+   "created": null,
    "branch": "main",
-   "commits": 5,
-   "files": 22,
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/bitforge",
    "stack": [
@@ -355,10 +435,18 @@
     "Edge AI",
     "MCU"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/kvquant-cli.svg",
+     "source": "shots/kvquant-cli.svg",
+     "alt": "BitForge screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# BitForge",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Auto-compress language models to fit on microcontrollers and pocket edge devices.",
     "",
@@ -375,27 +463,35 @@
    "url": "https://github.com/AmSach/kernelweave",
    "description": "Self-compiling skill kernels for LLMs.",
    "tag": "Agents · Python",
-   "stars": 1,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-09-21",
-   "forks": 0,
-   "watchers": 1,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-05-05",
+   "created": null,
    "branch": "main",
-   "commits": 121,
-   "files": 199,
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/kernelweave",
    "stack": [
     "Python",
     "LLM Agents"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/project-1.svg",
+     "source": "shots/project-1.svg",
+     "alt": "KernelWeave screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# KernelWeave",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Self-compiling skill kernels for LLMs.",
     "",
@@ -411,17 +507,17 @@
    "url": "https://github.com/AmSach/stegachirp",
    "description": "Ultrasonic FSK steganography for WAV files in pure Python with zero numpy or scipy dependencies.",
    "tag": "DSP · Pure Python",
-   "stars": 3,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-07-07",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-07-07",
-   "branch": "master",
-   "commits": 1,
-   "files": 12,
+   "created": null,
+   "branch": "main",
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/stegachirp",
    "stack": [
@@ -429,10 +525,18 @@
     "DSP",
     "Audio"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/latency-cli.svg",
+     "source": "shots/latency-cli.svg",
+     "alt": "StegaChirp screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# StegaChirp",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Ultrasonic FSK steganography for WAV files in pure Python with zero numpy or scipy dependencies.",
     "",
@@ -449,27 +553,35 @@
    "url": "https://github.com/AmSach/SignalHop",
    "description": "Low-latency signal routing and telemetry pipeline.",
    "tag": "Systems · Python",
-   "stars": 1,
+   "stars": null,
    "language": "Python",
-   "pushed": "2026-07-19",
-   "forks": 0,
-   "watchers": 0,
-   "issues": 0,
+   "pushed": null,
+   "forks": null,
+   "watchers": null,
+   "issues": null,
    "license": null,
-   "created": "2026-04-29",
-   "branch": "master",
-   "commits": 37,
-   "files": 58,
+   "created": null,
+   "branch": "main",
+   "commits": null,
+   "files": null,
    "counts": {},
    "github": "https://github.com/AmSach/SignalHop",
    "stack": [
     "Python",
     "Telemetry"
    ],
-   "images": [],
+   "images": [
+    {
+     "file": "shots/project-2.svg",
+     "source": "shots/project-2.svg",
+     "alt": "SignalHop screenshot 1",
+     "xray": false
+    }
+   ],
    "lines": [
     "# SignalHop",
     "",
+    "\u0001IMG0\u0001",
     "",
     "### Low-latency signal routing and telemetry pipeline.",
     "",
@@ -868,6 +980,7 @@
    "lon": 77.59,
    "desc": "National Finalist across venture unit economics (CAC, LTV, Payback) and corporate balance sheet stress-testing.",
    "url": "https://www.linkedin.com/in/theamansachan",
+   "photo": "shots/game-theory.png",
    "photos": []
   },
   {
@@ -878,6 +991,7 @@
    "lon": 75.86,
    "desc": "National Finalist in business strategy (Enigma) and applied tech hackathon (Epinoia).",
    "url": "https://www.linkedin.com/in/theamansachan",
+   "photo": "shots/decision-analytics.png",
    "photos": []
   },
   {
@@ -888,6 +1002,7 @@
    "lon": 72.88,
    "desc": "Runner-up in autonomous robotics hardware build and real-time navigation.",
    "url": "https://github.com/AmSach/voxelnav",
+   "photo": "shots/voxelnav-cli.svg",
    "photos": []
   },
   {
@@ -898,6 +1013,7 @@
    "lon": 77.21,
    "desc": "2nd Runner-up at IIT Kanpur Techkriti; National Finalist at IIT Delhi Stratagize supply chain case.",
    "url": "https://www.linkedin.com/in/theamansachan",
+   "photo": "shots/capital-sankey.png",
    "photos": []
   }
  ],

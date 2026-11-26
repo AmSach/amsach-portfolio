@@ -98,7 +98,10 @@
       "desc": "Manifold-Activated Pruning of Latent Experts for Sub-2-BPW MoE LLMs. Compresses Gemma 4 26B from 9.92 GB to 4.75 GB (1.48 BPW) at 45.4 tok/s on 6GB GPUs.",
       "long": "MAPLE structurally prunes inactive latent experts on consumer hardware without sacrificing reasoning fidelity. Reached 65+ GitHub stars, 300+ HuggingFace downloads in 24h, and featured on Hacker News and llama.cpp discussions.",
       "githubRepo": "AmSach/maple",
-      "shots": [],
+      "shots": [
+        "shots/maple-architecture.png",
+        "shots/maple-latency.png"
+      ],
       "stack": [
         "Python",
         "PyTorch",
@@ -114,7 +117,9 @@
       "desc": "Real-time semantic voxel mapping system for ROS2 robots with sub-100ms latency on Jetson Nano.",
       "long": "VoxelNav fuses depth/LiDAR point clouds with semantic segmentation into a sparse Bayesian 3D voxel grid, enabling obstacle-aware autonomous navigation on edge robotics hardware.",
       "githubRepo": "AmSach/voxelnav",
-      "shots": [],
+      "shots": [
+        "shots/voxelnav-cli.svg"
+      ],
       "stack": [
         "C++",
         "ROS2",
@@ -129,7 +134,10 @@
       "desc": "Enterprise causal econometrics and ML decision architecture deploying Double/Debiased ML, Level-k/QRE pricing, and spectral hypergraph attribution.",
       "long": "Production B-school analytics engine benchmarking cohort retention, BG/NBD + Gamma-Gamma CLV modeling, survival analysis, and causal price elasticity across 50,000+ transactions.",
       "githubRepo": "AmSach/decision-analytics-engine",
-      "shots": [],
+      "shots": [
+        "shots/decision-analytics.png",
+        "shots/game-theory.png"
+      ],
       "stack": [
         "Python",
         "Double ML",
@@ -144,7 +152,9 @@
       "desc": "Sub-millisecond C++20 and async Python HFT statistical arbitrage, cross-exchange spread, and delta-neutral funding engine.",
       "long": "Monitors live order book feeds across venues with lock-free structures in C++20 and async Python orchestration for spread and funding-rate arbitrage.",
       "githubRepo": "AmSach/latency-engine",
-      "shots": [],
+      "shots": [
+        "shots/latency-cli.svg"
+      ],
       "stack": [
         "C++20",
         "Async Python",
@@ -158,7 +168,9 @@
       "desc": "GPS-denied drone navigation with Agentic AI combining VINS-Mono, Nav2, and an LLM mission parser.",
       "long": "Translates natural-language mission objectives into collision-free visual-inertial waypoints for autonomous UAV flight without GPS.",
       "githubRepo": "AmSach/GhostPilot",
-      "shots": [],
+      "shots": [
+        "shots/ghostpilot-cli.svg"
+      ],
       "stack": [
         "Python",
         "VINS-Mono",
@@ -173,7 +185,9 @@
       "desc": "Drop-in KV cache compressor for local LLM inference, enabling 70B-class context scaling on 8GB RAM.",
       "long": "Compresses key-value attention caches on the fly during autoregressive decoding to fit large models on memory-constrained laptops.",
       "githubRepo": "AmSach/kvquant",
-      "shots": [],
+      "shots": [
+        "shots/kvquant-cli.svg"
+      ],
       "stack": [
         "Python",
         "Quantization",
@@ -188,7 +202,9 @@
       "long": "High-performance C++ entropy coder combining multi-scale context modeling with predictive range coding.",
       "githubRepo": "AmSach/middleout-lattice",
       "more": true,
-      "shots": [],
+      "shots": [
+        "shots/project-1.svg"
+      ],
       "stack": [
         "C++",
         "Compression",
@@ -203,7 +219,9 @@
       "long": "Matches idle GPU/CPU nodes with batch workloads using dynamic spot pricing.",
       "githubRepo": "AmSach/ComputePool-Grid",
       "more": true,
-      "shots": [],
+      "shots": [
+        "shots/project-2.svg"
+      ],
       "stack": [
         "Next.js",
         "FastAPI",
@@ -218,7 +236,9 @@
       "long": "Automated quantization and pruning pipeline targeting ultra-low-memory MCU deployments.",
       "githubRepo": "AmSach/bitforge",
       "more": true,
-      "shots": [],
+      "shots": [
+        "shots/kvquant-cli.svg"
+      ],
       "stack": [
         "Python",
         "Edge AI",
@@ -233,7 +253,9 @@
       "long": "Synthesizes and caches reusable execution kernels from agent trajectories.",
       "githubRepo": "AmSach/kernelweave",
       "more": true,
-      "shots": [],
+      "shots": [
+        "shots/project-1.svg"
+      ],
       "stack": [
         "Python",
         "LLM Agents"
@@ -247,7 +269,9 @@
       "long": "Encodes and decodes hidden payloads in ultrasonic frequency-shift keyed audio carriers.",
       "githubRepo": "AmSach/stegachirp",
       "more": true,
-      "shots": [],
+      "shots": [
+        "shots/latency-cli.svg"
+      ],
       "stack": [
         "Python",
         "DSP",
@@ -262,7 +286,9 @@
       "long": "Lightweight routing utility for distributed telemetry streams.",
       "githubRepo": "AmSach/SignalHop",
       "more": true,
-      "shots": [],
+      "shots": [
+        "shots/project-2.svg"
+      ],
       "stack": [
         "Python",
         "Telemetry"
@@ -279,6 +305,7 @@
       "lon": 77.59,
       "desc": "National Finalist across venture unit economics (CAC, LTV, Payback) and corporate balance sheet stress-testing.",
       "url": "https://www.linkedin.com/in/theamansachan",
+      "photo": "shots/game-theory.png",
       "photos": []
     },
     {
@@ -289,6 +316,7 @@
       "lon": 75.86,
       "desc": "National Finalist in business strategy (Enigma) and applied tech hackathon (Epinoia).",
       "url": "https://www.linkedin.com/in/theamansachan",
+      "photo": "shots/decision-analytics.png",
       "photos": []
     },
     {
@@ -299,6 +327,7 @@
       "lon": 72.88,
       "desc": "Runner-up in autonomous robotics hardware build and real-time navigation.",
       "url": "https://github.com/AmSach/voxelnav",
+      "photo": "shots/voxelnav-cli.svg",
       "photos": []
     },
     {
@@ -309,6 +338,7 @@
       "lon": 77.21,
       "desc": "2nd Runner-up at IIT Kanpur Techkriti; National Finalist at IIT Delhi Stratagize supply chain case.",
       "url": "https://www.linkedin.com/in/theamansachan",
+      "photo": "shots/capital-sankey.png",
       "photos": []
     }
   ],

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <rect width="800" height="460" rx="10" fill="#0b1015"/>
+  <rect x="1" y="1" width="798" height="458" rx="9" fill="none" stroke="#1e2a36" stroke-width="2"/>
+  <rect width="800" height="38" rx="10" fill="#111820"/>
+  <circle cx="24" cy="19" r="5" fill="#ff5f56"/>
+  <circle cx="42" cy="19" r="5" fill="#ffbd2e"/>
+  <circle cx="60" cy="19" r="5" fill="#27c93f"/>
+  <text x="400" y="23" text-anchor="middle" fill="#6f8296" font-family="monospace" font-size="12">voxelnav — jetson nano edge telemetry (&lt;100ms)</text>
+  <rect x="28" y="60" width="220" height="370" rx="6" fill="#0f151c" stroke="#1e2a36"/>
+  <text x="44" y="88" fill="#4cc9f0" font-family="monospace" font-size="13">TOPICS / NODES</text>
+  <text x="44" y="118" fill="#6ee7b7" font-family="monospace" font-size="13">● /ouster/points</text>
+  <text x="44" y="144" fill="#6ee7b7" font-family="monospace" font-size="13">● /camera/depth</text>
+  <text x="44" y="170" fill="#6ee7b7" font-family="monospace" font-size="13">● /voxel_grid</text>
+  <text x="44" y="196" fill="#6ee7b7" font-family="monospace" font-size="13">● /nav2/costmap_3d</text>
+  <text x="44" y="230" fill="#a9d6e5" font-family="monospace" font-size="11">RATE: 20.0 Hz</text>
+  <text x="44" y="250" fill="#a9d6e5" font-family="monospace" font-size="11">VOXELS: 148,200</text>
+  <text x="44" y="270" fill="#a9d6e5" font-family="monospace" font-size="11">VRAM: 184 MB</text>
+  <rect x="266" y="60" width="506" height="370" rx="6" fill="#0f151c" stroke="#1e2a36"/>
+  <text x="284" y="90" fill="#9fb4ff" font-family="monospace" font-size="12">[voxel_mapper] Point cloud ingestion: 28,400 pts in 14.2ms</text>
+  <text x="284" y="116" fill="#a9d6e5" font-family="monospace" font-size="12">[octree_node]  Octree quantization (5cm): 148,200 voxels</text>
+  <text x="284" y="142" fill="#d9e4ee" font-family="monospace" font-size="12">[inference]    PointNet++ semantic pass: 24.1ms</text>
+  <text x="284" y="168" fill="#ffa94d" font-family="monospace" font-size="12">[pipeline]     Total frame latency: 42.8ms (&lt;100ms budget)</text>
+  <text x="284" y="210" fill="#6ee7b7" font-family="monospace" font-size="12">✓ Real-time 3D voxel stream healthy. 0 dropped frames.</text>
+  <text x="284" y="240" fill="#8b8b99" font-family="monospace" font-size="11">C++20 lock-free queue · ROS2 Humble · Jetson Nano edge deployment</text>
+</svg>

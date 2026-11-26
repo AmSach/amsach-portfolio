@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <rect width="800" height="460" rx="10" fill="#0e0e11"/>
+  <rect x="1" y="1" width="798" height="458" rx="9" fill="none" stroke="#26262e" stroke-width="2"/>
+  <rect width="800" height="38" rx="10" fill="#16161b"/>
+  <circle cx="24" cy="19" r="5" fill="#ff5f56"/>
+  <circle cx="42" cy="19" r="5" fill="#ffbd2e"/>
+  <circle cx="60" cy="19" r="5" fill="#27c93f"/>
+  <text x="400" y="23" text-anchor="middle" fill="#8b8b99" font-family="monospace" font-size="12">latency-engine — c++20 lock-free order book stat-arb</text>
+  <text x="36" y="80" fill="#7fd1a0" font-family="monospace" font-size="14">$ ./bin/latency_engine --stat-arb --venues binance,coinbase</text>
+  <text x="36" y="112" fill="#ebe6db" font-family="monospace" font-size="13">Ingested 2,400,000 tick updates in 1,870ms (1.28M ticks/sec)</text>
+  <text x="36" y="136" fill="#8fd0ee" font-family="monospace" font-size="13">Tick-to-trade: p50: 420ns   p95: 780ns   p99: 1.12µs</text>
+  <rect x="36" y="168" width="728" height="246" rx="6" fill="#141418" stroke="#23232b"/>
+  <polyline points="60,350 120,340 180,360 240,290 300,310 360,250 420,260 480,210 540,230 600,195 660,210 720,190" fill="none" stroke="#7fd1a0" stroke-width="2.5"/>
+  <polyline points="60,380 120,375 180,370 240,355 300,350 360,335 420,338 480,315 540,320 600,295 660,300 720,285" fill="none" stroke="#e6c37a" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="60" y="398" fill="#7a766a" font-family="monospace" font-size="11">Cross-Exchange Spread: +14.2 bps   Delta: 0.00 (Delta-Neutral Funding Rate)</text>
+</svg>
