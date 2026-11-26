@@ -171,7 +171,7 @@ const mapleSvg = createExecutiveHud({
   <text x="528" y="258" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold">3.75x Faster Generation</text>
   <text x="528" y="274" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10">Zero PCIe bus stalls · Softmax invariant</text>`,
   takeawayTitle: "The Plain-English Impact",
-  takeawayText: "Enables students, researchers, and everyday developers to run massive 26-billion parameter AI models directly on their personal laptops without renting cloud servers."
+  takeawayText: "Enables anyone to run massive 26-billion parameter AI models directly on everyday laptops without cloud servers."
 });
 fs.writeFileSync(path.join(SHOTS_DIR, "maple.svg"), mapleSvg);
 

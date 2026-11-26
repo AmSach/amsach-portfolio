@@ -114,5 +114,5 @@
   <circle cx="48" cy="420" r="10" fill="#10b981" opacity="0.2"/>
   <path d="M 44,420 L 47,423 L 52,417" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
   <text x="68" y="416" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold">The Plain-English Impact</text>
-  <text x="68" y="432" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Enables students, researchers, and everyday developers to run massive 26-billion parameter AI models directly on their personal laptops without renting cloud servers.</text>
+  <text x="68" y="432" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Enables anyone to run massive 26-billion parameter AI models directly on everyday laptops without cloud servers.</text>
 </svg>
