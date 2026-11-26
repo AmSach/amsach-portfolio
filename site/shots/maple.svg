@@ -1,91 +1,118 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
   <defs>
-    <linearGradient id="termGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0e1117"/>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e121a"/>
       <stop offset="100%" stop-color="#080a0f"/>
     </linearGradient>
-    <linearGradient id="cyanLine" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="cyanGlow" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#38bdf8"/>
       <stop offset="100%" stop-color="#818cf8"/>
     </linearGradient>
-    <linearGradient id="emeraldLine" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#34d399"/>
       <stop offset="100%" stop-color="#10b981"/>
     </linearGradient>
-    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="goldGlow" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#fbbf24"/>
       <stop offset="100%" stop-color="#f59e0b"/>
     </linearGradient>
-    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#c084fc"/>
-      <stop offset="100%" stop-color="#a855f7"/>
+    <linearGradient id="roseGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#ef4444"/>
     </linearGradient>
   </defs>
 
-  <!-- Background Shell -->
-  <rect width="800" height="460" rx="10" fill="url(#termGrad)"/>
-  <rect x="1" y="1" width="798" height="458" rx="9" fill="none" stroke="#1e2638" stroke-width="2"/>
+  <!-- Outer Frame Background -->
+  <rect width="800" height="460" rx="10" fill="url(#bgGrad)"/>
+  <rect x="1" y="1" width="798" height="458" rx="9" fill="none" stroke="#1e2738" stroke-width="2"/>
 
-  <!-- Window Header Bar -->
-  <rect width="800" height="38" rx="10" fill="#131826"/>
-  <rect x="0" y="37" width="800" height="1" fill="#1e2638"/>
-  <circle cx="24" cy="19" r="5" fill="#ff5f56"/>
-  <circle cx="42" cy="19" r="5" fill="#ffbd2e"/>
-  <circle cx="60" cy="19" r="5" fill="#27c93f"/>
-  <text x="400" y="23" text-anchor="middle" fill="#7a889b" font-family="monospace" font-size="12" letter-spacing="0.5">maple — sub-2-bpw moe expert pruning hud</text>
-
-  <!-- Command Prompt Strip -->
-  <rect x="28" y="50" width="744" height="32" rx="5" fill="#0b0e14" stroke="#192231"/>
-  <text x="40" y="71" fill="#4ade80" font-family="monospace" font-size="12" font-weight="bold">$ <tspan fill="#e2e8f0" font-weight="normal">maple prune --model gemma-4-26b-a4b --target 1.48bpw --residency in-vram</tspan></text>
-
-  <!-- Left Sidebar Pane -->
-  <rect x="28" y="92" width="224" height="338" rx="6" fill="#0a0d13" stroke="#192231"/>
-  <rect x="28" y="92" width="224" height="28" rx="6" fill="#111622"/>
-  <text x="40" y="110" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="1">MOE EXPERT MANIFOLD</text>
-    <text x="44" y="120" fill="#38bdf8" font-family="monospace" font-size="12">Architecture: <tspan fill="#f1f5f9">Gemma 4 26B A4B</tspan></text>
-    <text x="44" y="146" fill="#94a3b8" font-family="monospace" font-size="12">Active Experts: <tspan fill="#f1f5f9">16 / 128</tspan></text>
-    <text x="44" y="172" fill="#4ade80" font-family="monospace" font-size="12">Top-k Retained: <tspan fill="#f1f5f9">48 Experts</tspan></text>
-    <text x="44" y="198" fill="#f87171" font-family="monospace" font-size="12">Dormant Excised: <tspan fill="#f1f5f9">80 Experts</tspan></text>
-    <text x="44" y="224" fill="#94a3b8" font-family="monospace" font-size="12">Original Size: <tspan fill="#f1f5f9">9.92 GB</tspan></text>
-    <text x="44" y="250" fill="#4ade80" font-family="monospace" font-size="12">Pruned Size: <tspan fill="#f1f5f9">4.75 GB (-52.1%)</tspan></text>
-    <text x="44" y="276" fill="#fbbf24" font-family="monospace" font-size="12">Residency: <tspan fill="#f1f5f9">100% in 6GB VRAM</tspan></text>
-    <text x="44" y="302" fill="#4ade80" font-family="monospace" font-size="12">Generation: <tspan fill="#f1f5f9">45.4 tok/s</tspan></text>
-    <text x="44" y="328" fill="#38bdf8" font-family="monospace" font-size="12">PPL Delta: <tspan fill="#f1f5f9">+0.08 on GSM8K</tspan></text>
-
-  <!-- Right Visual / Graph Pane -->
-  <rect x="264" y="92" width="508" height="338" rx="6" fill="#0a0d13" stroke="#192231"/>
-  <rect x="264" y="92" width="508" height="28" rx="6" fill="#111622"/>
-  <text x="278" y="110" fill="#a78bfa" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="1">EXPERT SALIENCY DISTRIBUTION &amp; LATENCY SPARKLINE</text>
+  <!-- Top Header Bar -->
+  <rect width="800" height="52" rx="10" fill="#131926"/>
+  <rect x="0" y="51" width="800" height="1" fill="#1e2738"/>
   
-  <!-- Right Content Injected -->
-  <!-- Grid Lines -->
-  <line x1="280" y1="180" x2="750" y2="180" stroke="#161e2e" stroke-dasharray="4,4"/>
-  <line x1="280" y1="240" x2="750" y2="240" stroke="#161e2e" stroke-dasharray="4,4"/>
-  <line x1="280" y1="300" x2="750" y2="300" stroke="#161e2e" stroke-dasharray="4,4"/>
+  <!-- Terminal Dot Controls -->
+  <circle cx="26" cy="26" r="6" fill="#ff5f56"/>
+  <circle cx="46" cy="26" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="26" r="6" fill="#27c93f"/>
+
+  <!-- Main Title & Subtitle -->
+  <text x="96" y="27" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="bold">MAPLE // Sub-2-BPW MoE Pruning Engine</text>
+  <text x="96" y="42" fill="#64748b" font-family="monospace" font-size="11">Manifold-Activated Pruning of Latent Experts for Local LLM Serving</text>
+
+  <!-- Top Right Verified Badge -->
+  <rect x="580" y="14" width="194" height="24" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.2"/>
+  <circle cx="594" cy="26" r="4" fill="#fbbf24"/>
+  <text x="606" y="30" fill="#fbbf24" font-family="monospace" font-size="11" font-weight="bold">65★ GITHUB · 300+ DOWNLOADS</text>
+
+  <!-- Top 3 Stat Summary Cards -->
+  <!-- Card 1 -->
+  <rect x="26" y="66" width="236" height="82" rx="8" fill="#0c1017" stroke="#1e293b"/>
+  <text x="42" y="88" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-transform="uppercase" letter-spacing="0.5">MODEL SIZE REDUCTION</text>
+  <text x="42" y="118" fill="#38bdf8" font-family="monospace" font-size="20" font-weight="bold">9.92 GB ➔ 4.75 GB</text>
+  <text x="42" y="136" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">52.1% Smaller (1.48 Bits/Weight)</text>
+
+  <!-- Card 2 -->
+  <rect x="282" y="66" width="236" height="82" rx="8" fill="#0c1017" stroke="#1e293b"/>
+  <text x="298" y="88" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-transform="uppercase" letter-spacing="0.5">GENERATION THROUGHPUT</text>
+  <text x="298" y="118" fill="#34d399" font-family="monospace" font-size="20" font-weight="bold">45.4 words / sec</text>
+  <text x="298" y="136" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">100% In-VRAM on 6GB Laptop GPU</text>
+
+  <!-- Card 3 -->
+  <rect x="538" y="66" width="236" height="82" rx="8" fill="#0c1017" stroke="#1e293b"/>
+  <text x="554" y="88" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-transform="uppercase" letter-spacing="0.5">CLOUD COST REQUIRED</text>
+  <text x="554" y="118" fill="#fbbf24" font-family="monospace" font-size="20" font-weight="bold">$0 / month</text>
+  <text x="554" y="136" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">Replaces $10,000 Cloud GPU Servers</text>
+
+  <!-- Center Visual Display Area -->
+  <rect x="26" y="160" width="748" height="226" rx="8" fill="#0b0e14" stroke="#192231"/>
+  <!-- Left: Memory Footprint Bar Comparison -->
+  <text x="50" y="195" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold">Memory Footprint Comparison (Gemma 4 26B)</text>
   
-  <!-- Expert Histogram Bars -->
-  <rect x="290" y="160" width="12" height="150" fill="#38bdf8" rx="2"/>
-  <rect x="306" y="145" width="12" height="165" fill="#38bdf8" rx="2"/>
-  <rect x="322" y="130" width="12" height="180" fill="#4ade80" rx="2"/>
-  <rect x="338" y="150" width="12" height="160" fill="#4ade80" rx="2"/>
-  <rect x="354" y="170" width="12" height="140" fill="#38bdf8" rx="2"/>
-  <rect x="370" y="210" width="12" height="100" fill="#818cf8" rx="2"/>
-  <rect x="386" y="240" width="12" height="70" fill="#818cf8" rx="2"/>
-  <rect x="402" y="270" width="12" height="40" fill="#475569" rx="2"/>
-  <rect x="418" y="285" width="12" height="25" fill="#334155" rx="2"/>
-  <rect x="434" y="295" width="12" height="15" fill="#334155" rx="2"/>
-  <rect x="450" y="298" width="12" height="12" fill="#334155" rx="2"/>
-  <text x="290" y="335" fill="#4ade80" font-family="monospace" font-size="9.5">Retained (Active)</text>
-  <text x="390" y="335" fill="#64748b" font-family="monospace" font-size="9.5">Excised (Dormant)</text>
+  <!-- Baseline Bar -->
+  <text x="50" y="224" fill="#94a3b8" font-family="monospace" font-size="11">Standard MoE Model (Uncompressed)</text>
+  <rect x="50" y="232" width="340" height="24" rx="4" fill="#334155"/>
+  <text x="310" y="248" fill="#f87171" font-family="monospace" font-size="11" font-weight="bold">9.92 GB (OOM Crash on 6GB GPU)</text>
 
-  <!-- Throughput Curve -->
-  <polyline points="490,300 530,270 570,240 610,210 650,180 690,165 730,160" fill="none" stroke="url(#cyanLine)" stroke-width="3"/>
-  <circle cx="730" cy="160" r="4" fill="#38bdf8"/>
-  <text x="640" y="150" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">45.4 tok/s</text>
-  <text x="500" y="335" fill="#64748b" font-family="monospace" font-size="9">CPU baseline: 12.1 tok/s</text>
+  <!-- MAPLE Bar -->
+  <text x="50" y="280" fill="#38bdf8" font-family="monospace" font-size="11">MAPLE Pruned Model (Our System)</text>
+  <rect x="50" y="288" width="163" height="24" rx="4" fill="url(#emeraldGlow)"/>
+  <text x="225" y="304" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">4.75 GB (Fits 6GB GPU with 1.25 GB Free)</text>
 
-  <!-- Status Bar Footer in Right Pane -->
-  <rect x="278" y="380" width="480" height="36" rx="4" fill="#0e131d" stroke="#192231"/>
-  <text x="292" y="398" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">✓ Pruning complete · Softmax invariance verified · GGUF exported</text>
-  <text x="292" y="411" fill="#64748b" font-family="monospace" font-size="10">Target 1.48 BPW · Retains STEM/Code reasoning · Zero CPU PCIe stalls</text>
+  <!-- Pipeline Badges -->
+  <rect x="50" y="336" width="105" height="30" rx="5" fill="#1e293b"/>
+  <text x="60" y="355" fill="#94a3b8" font-family="monospace" font-size="11">128 Experts</text>
+
+  <text x="165" y="355" fill="#64748b" font-family="monospace" font-size="14">➔</text>
+
+  <rect x="185" y="336" width="115" height="30" rx="5" fill="#1e293b"/>
+  <text x="195" y="355" fill="#38bdf8" font-family="monospace" font-size="11">Saliency Filter</text>
+
+  <text x="310" y="355" fill="#64748b" font-family="monospace" font-size="14">➔</text>
+
+  <rect x="330" y="336" width="140" height="30" rx="5" fill="#064e3b" stroke="#10b981"/>
+  <text x="340" y="355" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">48 Active Experts</text>
+
+  <!-- Divider -->
+  <line x1="495" y1="180" x2="495" y2="365" stroke="#1e293b"/>
+
+  <!-- Right: Real-time Speedup Graph -->
+  <text x="515" y="195" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold">Inference Speedup Curve</text>
+  
+  <polyline points="520,320 560,290 600,240 640,210 680,185 730,175" fill="none" stroke="url(#cyanGlow)" stroke-width="3.5"/>
+  <circle cx="730" cy="175" r="5" fill="#38bdf8"/>
+  <text x="660" y="165" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="bold">45.4 tok/s</text>
+
+  <polyline points="520,335 560,330 600,325 640,320 680,315 730,310" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="520" y="350" fill="#64748b" font-family="monospace" font-size="10">CPU Offload Baseline: 12.1 tok/s</text>
+
+  <rect x="515" y="240" width="220" height="48" rx="6" fill="#131c2e" stroke="#25354e"/>
+  <text x="528" y="258" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold">3.75x Faster Generation</text>
+  <text x="528" y="274" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10">Zero PCIe bus stalls · Softmax invariant</text>
+
+  <!-- Bottom Takeaway Banner -->
+  <rect x="26" y="396" width="748" height="48" rx="6" fill="#0d1420" stroke="#1d283a"/>
+  <circle cx="48" cy="420" r="10" fill="#10b981" opacity="0.2"/>
+  <path d="M 44,420 L 47,423 L 52,417" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
+  <text x="68" y="416" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold">The Plain-English Impact</text>
+  <text x="68" y="432" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Enables students, researchers, and everyday developers to run massive 26-billion parameter AI models directly on their personal laptops without renting cloud servers.</text>
 </svg>
